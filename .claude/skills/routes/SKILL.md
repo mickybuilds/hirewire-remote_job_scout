@@ -52,6 +52,7 @@ Present the routes to the user briefly and adjust them together. Routes with wea
    - `language` and `candidate` from steps 1 and 2. `local_employers`: `lower_priority` or `same`.
    - `routes`: `{"route_id": "Short label"}` for every route, postponed ones included. Ids in lowercase, no spaces.
    - `sources.himalayas.queries`: 12–25 short English queries covering the titles of all routes. Short queries find more.
+   - `sources.apify_linkedin` and `sources.apify_indeed`: write their queries now but leave `enabled` as `false`. They are turned on only through step 7.
    - `sources.apify_linkedin`: `location` = the country name in English; `geo_id` from the table below, or empty if the country is not listed. 10–16 queries: the most specific titles, plus 2–3 in the local language if it is not English.
    - `sources.apify_indeed`: searches the candidate's national Indeed site (`country` empty = `country_code`). 8–12 short queries, mixing English and the local language; broad ones work because the prefilter drops non-remote listings.
    - `sources.builtin`: `country` = ISO 3166-1 alpha-3 code of the country of residence (`ARG`, `MEX`, `USA`); 6–10 short queries.
@@ -78,7 +79,7 @@ All patterns are regular expressions over the normalized text (lowercase, no acc
   - Residence patterns ("must be based in…", "…residents only", "remote - …"): remove only the ones that name the country of residence or a region that contains it. A passport does not meet a residence requirement: a Spanish citizen living in Mexico keeps "must be based in Europe".
   - Add the equivalent patterns for large markets that are not authorized and not in the template, if the candidate's routes point there (for example Germany, Australia).
 - `mode_exclusions` (hybrid, on-site, in office): applied only when the listing never says it is remote and does not come from a `remote_only_sources` board, because companies mention offices and hybrid teams in boilerplate. If `work_mode` is `remote_or_hybrid`, leave the list empty.
-- `remote_only_sources`: boards that only publish remote jobs (`Himalayas`).
+- `remote_only_sources`: boards that only publish remote jobs (keep the template list).
 - `remote_required_sources`: sources whose "remote" filter is unreliable (`LinkedIn`, `Indeed`). A listing from these sources that never says it is remote is discarded. Leave it empty if `work_mode` is `remote_or_hybrid`.
 - `remote_signals`: add the local-language ways of saying "remote" if the country's language is not English or Spanish.
 
@@ -95,14 +96,16 @@ When the user says they see jobs that are not remote or not open to them (or the
 5. Run `python scripts/hirewire.py refilter --location` to apply the new rules to the jobs already on the dashboard.
 6. Tell the user how many jobs were removed and show two or three examples.
 
-## 7. Apify account
+## 7. Optional: LinkedIn and Indeed through Apify
 
-Apify gives USD 5 of free credit per month. LinkedIn is the main paid source (about USD 2 per 1,000 listings); Indeed costs cents. A full search with both costs around USD 0.30–0.60, and each source has a hard cap in `max_spend_usd`.
+Only when the user asks for it, or after the first searches if they want more volume. Never as part of the first setup: HireWire works with the free boards alone.
+
+Apify gives USD 5 of free credit per month. Indeed costs cents per search; LinkedIn about USD 0.40. Each source has a hard cap in `max_spend_usd`.
 
 1. The user creates a free account at apify.com and copies the API token from Settings → API & Integrations.
-2. The user copies `.env.example` to `.env` and pastes the token after `APIFY_TOKEN=`. They do this themselves; never ask them to paste the token in the chat.
-
-If they do not want an Apify account, set `sources.apify_linkedin.enabled` to `false`: the search runs on Himalayas only, with less volume.
+2. If `.env` does not exist, copy `.env.example` to `.env`. Open `.env` for the user in their editor or file viewer. They paste the token after `APIFY_TOKEN=`, save and close. Tell them not to paste the token in the conversation. Never read the file.
+3. Enable `sources.apify_indeed`.
+4. LinkedIn: before enabling `sources.apify_linkedin`, tell the user that collecting data from LinkedIn goes against LinkedIn's terms of use. The Apify actor reads public listings and does not use their LinkedIn account or password, but they use it at their own risk. Enable it only if they say yes.
 
 ## 8. Next step
 

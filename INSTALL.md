@@ -22,20 +22,13 @@ If none works or the version is older, ask the user for permission and install i
 - macOS: `brew install python`, or the installer from python.org.
 - Linux: the distribution's package manager (`sudo apt install python3`).
 
-## 4. Apify account
+## 4. Open the project
 
-Explain: HireWire searches LinkedIn and Indeed through Apify, besides five free job boards. A free Apify account gives USD 5 of credit per month, enough for several full searches; each search has a spending cap. Without it, HireWire still works with free sources, but finds fewer jobs.
-
-If the user wants it now:
-1. They create a free account at https://apify.com and copy the API token from Settings → API & Integrations.
-2. Copy `.env.example` to `.env` in the HireWire folder and open it for them. They paste the token after `APIFY_TOKEN=` and save. Never ask them to paste the token in the chat.
-
-They can also do this later, during the routes stage.
-
-## 5. Open the project
+HireWire needs no AI key or API key: it runs on the user's own agent plan. The first searches use free job boards only. LinkedIn and Indeed (through Apify) are an optional extra the user can add later; do not bring it up now.
 
 The HireWire workflows load when the agent runs inside the HireWire folder. Tell the user how to continue with their tool:
-- Claude Code (desktop app): open a new session and choose the HireWire folder. Terminal: `cd "<folder>"` and `claude`.
-- Codex, OpenCode, Gemini CLI or another agent: start it inside the HireWire folder.
+- Claude desktop app (Code tab): start a new session and choose the HireWire folder.
+- Antigravity (app): open the HireWire folder as the workspace.
+- Terminal agents (Claude Code, Codex, OpenCode, Antigravity CLI, Gemini CLI): `cd "<folder>"` and start the agent there.
 
 Then they type `/hirewire` (or write "start HireWire") and the interview begins.

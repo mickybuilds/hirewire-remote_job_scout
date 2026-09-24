@@ -63,7 +63,7 @@
       ]
     },
     "apify_linkedin": {
-      "enabled": true,
+      "enabled": false,
       "requires_apify": true,
       "actor": "curious_coder~linkedin-jobs-scraper",
       "max_spend_usd": 0.95,
@@ -76,7 +76,7 @@
       ]
     },
     "apify_indeed": {
-      "enabled": true,
+      "enabled": false,
       "requires_apify": true,
       "actor": "curious_coder~indeed-scraper",
       "max_spend_usd": 0.1,

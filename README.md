@@ -1,338 +1,367 @@
 <p align="center">
-  <img src="docs/banner.webp" alt="HireWire — Remote Job Scout: an AI agent that searches, filters and tracks remote jobs" width="100%">
+  <img src="docs/banner.webp" alt="HireWire — Remote Job Scout: un agente de IA que busca, filtra y sigue trabajos remotos" width="100%">
 </p>
 
 <p align="center">
-  <a href="#-getting-started"><img alt="Python 3.10+" src="https://img.shields.io/badge/python-3.10%2B-3776AB?logo=python&logoColor=white"></a>
-  <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-2f5d50"></a>
-  <img alt="Works with Claude Code, Codex, OpenCode, Gemini CLI" src="https://img.shields.io/badge/works%20with-Claude%20Code%20·%20Codex%20·%20OpenCode%20·%20Gemini%20CLI-7fc2a8">
-  <img alt="No dependencies" src="https://img.shields.io/badge/dependencies-none-lightgrey">
+  <a href="#-cómo-empezar"><img alt="Python 3.10+" src="https://img.shields.io/badge/python-3.10%2B-3776AB?logo=python&logoColor=white"></a>
+  <a href="LICENSE"><img alt="Licencia: MIT" src="https://img.shields.io/badge/licencia-MIT-2f5d50"></a>
+  <img alt="Funciona con Claude, Codex, OpenCode, Antigravity" src="https://img.shields.io/badge/funciona%20con-Claude%20·%20Codex%20·%20OpenCode%20·%20Antigravity-7fc2a8">
+  <img alt="Sin claves de IA" src="https://img.shields.io/badge/claves%20de%20IA-ninguna-lightgrey">
 </p>
 
 <p align="center">
-  <b>Find remote jobs you can <i>actually</i> take from your country, ranked against your real experience,<br>with a tailored ATS-ready CV for every one you pick.</b>
+  <b>Encontrá trabajos remotos que <i>realmente</i> podés tomar desde tu país, ordenados según tu experiencia real,<br>con un CV a medida y apto para ATS para cada uno que elijas.</b>
 </p>
 
 <p align="center">
-  <b>English</b> · <a href="README.es.md">Español</a>
+  <b>Español</b> · <a href="README.en.md">English</a>
 </p>
 
 ---
 
-## 📋 Contents
+## 📋 Contenido
 
-- [🤔 Why HireWire](#-why-hirewire)
-- [✨ How it works](#-how-it-works)
-- [🖥️ The dashboard](#️-the-dashboard)
-- [🚀 Getting started](#-getting-started) (about 15 minutes)
-- [🧭 Everyday use](#-everyday-use)
-- [💸 What it costs](#-what-it-costs)
-- [🔎 Job sources](#-job-sources)
-- [🛡️ What makes it different](#️-what-makes-it-different)
-- [🔒 Your privacy](#-your-privacy)
-- [🧰 Troubleshooting](#-troubleshooting)
-- [⚙️ Under the hood](#️-under-the-hood)
-- [👩‍💻 Author](#-author)
+- [🤔 Por qué HireWire](#-por-qué-hirewire)
+- [✨ Cómo funciona](#-cómo-funciona)
+- [🖥️ El tablero](#️-el-tablero)
+- [🚀 Cómo empezar](#-cómo-empezar) (unos 10 minutos)
+- [➕ Extra: sumá LinkedIn e Indeed](#-extra-sumá-linkedin-e-indeed) (opcional)
+- [🧭 Uso diario](#-uso-diario)
+- [💸 Cuánto cuesta](#-cuánto-cuesta)
+- [🔎 Fuentes de avisos](#-fuentes-de-avisos)
+- [🛡️ Qué lo hace distinto](#️-qué-lo-hace-distinto)
+- [🔒 Tu privacidad](#-tu-privacidad)
+- [🧰 Problemas frecuentes](#-problemas-frecuentes)
+- [⚙️ Por dentro](#️-por-dentro)
+- [👩‍💻 Autora](#-autora)
 
 ---
 
-## 🤔 Why HireWire
+## 🤔 Por qué HireWire
 
-Job boards are full of "remote" roles that are not remote for you:
+Los portales de empleo están llenos de puestos "remotos" que no son remotos para vos:
 
 - ❌ "Remote — US only"
-- ❌ "Work from anywhere"… and then *"must be authorized to work in the United States"* in the fine print
-- ❌ Hybrid or on-site roles tagged as remote
+- ❌ "Trabajá desde cualquier lugar"… y en la letra chica *"must be authorized to work in the United States"*
+- ❌ Puestos híbridos o presenciales etiquetados como remotos
 
-If you live outside the US or Europe, you lose hours reading listings you could never take. And when a real match finally shows up, rewriting your CV takes another hour, with the temptation to stretch the truth.
+Si vivís fuera de EE. UU. o Europa, perdés horas leyendo avisos a los que nunca vas a poder acceder. Y cuando por fin aparece uno que encaja, reescribir el CV lleva otra hora, con la tentación de exagerar.
 
-**HireWire does the reading for you.** It only shows jobs that say, in their own words, that they are remote **and** open to where you live. Then it writes an honest CV built only from facts you confirmed.
+**HireWire lee por vos.** Solo te muestra trabajos que dicen, con sus propias palabras, que son remotos **y** que aceptan el lugar donde vivís. Después escribe un CV honesto, armado solo con hechos que confirmaste.
 
-> 🙋 **You stay in control.** HireWire never applies, never sends messages and never fills in forms. It finds, ranks and prepares. You decide and apply.
+> 🙋 **Vos tenés el control.** HireWire nunca postula, nunca manda mensajes y nunca completa formularios. Busca, ordena y prepara. Vos decidís y postulás.
 
 ---
 
-## ✨ How it works
+## ✨ Cómo funciona
 
 <p align="center">
-  <img src="docs/how-it-works.png" alt="HireWire workflow: install, profile, routes, search pipeline with free prefilter and AI classifier, local dashboard, tailored CV, you apply" width="100%">
+  <img src="docs/how-it-works.es.png" alt="Flujo de HireWire: instalación, perfil, rutas, búsqueda con filtro gratuito y clasificador de IA, tablero local, CV a medida, postulás vos" width="100%">
 </p>
 
-<sub>Interactive version: download <a href="docs/how-it-works.html"><code>docs/how-it-works.html</code></a> and open it in your browser. Diagram made with <a href="https://github.com/tt-a1i/archify">Archify</a>.</sub>
+<sub>Versión interactiva: descargá <a href="docs/how-it-works.es.html"><code>docs/how-it-works.es.html</code></a> y abrilo en tu navegador. Diagrama hecho con <a href="https://github.com/tt-a1i/archify">Archify</a>.</sub>
 
-| Step | You do | HireWire does |
+| Paso | Vos hacés | HireWire hace |
 | --- | --- | --- |
-| **1. Profile** | Share your CV and answer a short interview (15–20 min). | Turns your experience into an **evidence bank**: each fact gets a code and a limit (what you did vs. what you took part in, tools you did *not* use). |
-| **2. Routes** | Say where you live, where you can legally work and whether you accept hybrid. | Proposes 2–5 job families that fit your evidence and sets up the search: queries, filters and location rules made for **your** situation. |
-| **3. Search** | Ask for a search whenever you want. | Pulls jobs from 7 sources, drops duplicates and fake-remote listings for free, and has the AI read the most relevant ones: A / B / C priority, with the exact sentence that proves you can apply. |
-| **4. CV** | Mark the jobs you like and press **CV in English** or **CV in Spanish**. | Re-checks the live listing and writes a **Harvard-format CV** (DOCX + PDF) using only facts from your evidence bank. |
+| **1. Perfil** | Compartís tu CV y respondés una entrevista corta (15–20 min). | Convierte tu experiencia en un **banco de evidencia**: cada hecho tiene un código y un límite (lo que hiciste y en lo que participaste, las herramientas que *no* usaste). |
+| **2. Rutas** | Contás dónde vivís, dónde podés trabajar legalmente y si aceptás híbrido. | Propone 2 a 5 familias de puestos acordes a tu evidencia y arma la búsqueda: consultas, filtros y reglas de ubicación hechas para **tu** situación. |
+| **3. Búsqueda** | Pedís una búsqueda cuando quieras. | Trae avisos de 5 portales gratis (y, si querés, de LinkedIn e Indeed), descarta gratis los repetidos y los falsos remotos, y la IA lee los más relevantes: prioridad A / B / C, con la frase exacta que prueba que podés postular. |
+| **4. CV** | Marcás los avisos que te gustan y tocás **CV en español** o **CV en inglés**. | Vuelve a verificar el aviso original y escribe un **CV en formato Harvard** (DOCX + PDF) usando solo hechos de tu banco de evidencia. |
 
 ---
 
-## 🖥️ The dashboard
+## 🖥️ El tablero
 
-It runs on your computer at `http://localhost:8765`. Nothing is uploaded.
+Corre en tu computadora, en `http://localhost:8765`. No se sube nada.
 
 <p align="center">
-  <img src="docs/dashboard.png" alt="HireWire dashboard with fictional sample jobs ranked A and B, each with location evidence, route and reason" width="100%">
+  <img src="docs/dashboard.png" alt="Tablero de HireWire con avisos de ejemplo ficticios ordenados A y B, cada uno con evidencia de ubicación, ruta y motivo" width="100%">
 </p>
 
-<sub>Fictional sample data. You can try the demo yourself by opening <code>web/index.html</code> through any static server.</sub>
+<sub>Datos de ejemplo ficticios. El tablero tiene botón para cambiar a español.</sub>
 
-**Flow:** To review → Interested → CV ready → Applied. When you dismiss a job you pick a reason with one click ("sales or support", "not really remote"…), and the agent can use those reasons to tune future searches.
-
----
-
-## 🚀 Getting started
-
-### What you need
-
-| | What | Cost | Why |
-| --- | --- | --- | --- |
-| 🤖 | An AI coding agent: [Claude Code](https://claude.com/claude-code), [Codex](https://openai.com/codex/), [OpenCode](https://opencode.ai) or [Gemini CLI](https://github.com/google-gemini/gemini-cli) | Your current plan (free tiers work, with lower quality) | It runs the interview, reads the job listings and writes your CVs. |
-| 🔑 | A free [Apify](https://apify.com) account | Free: USD 5 of credit every month | Searches LinkedIn and Indeed, with a spending cap. |
-| 🐍 | Python 3.10 or newer | Free | Runs the search engine and the dashboard. **The agent checks it and helps you install it.** |
-
-No programming knowledge is needed. You will copy and paste two things.
-
-### Step 1 · Create your Apify account and copy your API token
-
-The API token is a password-like key that lets HireWire run LinkedIn and Indeed searches on your free Apify credit.
-
-1. Go to **[apify.com](https://apify.com)** and click **Sign up free**. You can sign up with Google, GitHub or an email address. No credit card is needed.
-2. Once inside the Apify Console, open **Settings** in the left menu.
-3. Open the **API & Integrations** tab.
-4. Under **Personal API tokens**, click the **copy** icon next to your token (it starts with `apify_api_`).
-5. Keep it at hand for Step 3.
-
-> ⚠️ **Treat the token like a password.** Never paste it in a chat, an email or a public file. HireWire keeps it only in a local `.env` file that is never uploaded.
-
-<sub>You can skip Apify and add it later: HireWire still works with its five free sources, just with fewer jobs.</sub>
-
-### Step 2 · Install HireWire
-
-Open your AI agent and paste this sentence:
-
-```text
-Install HireWire from https://github.com/mickybuilds/hirewire-remote_job_scout following its INSTALL.md.
-```
-
-The agent asks where to install it (suggestion: a `HireWire` folder in your Documents), downloads it, checks Python and explains the next step.
-
-When it finishes, **open the HireWire folder in your agent**, so it can see HireWire's instructions:
-
-| Agent | How to open the folder |
-| --- | --- |
-| **Claude Code** (desktop app) | Start a new session and choose the `HireWire` folder as the project. |
-| **Claude Code** (terminal) | `cd` into the folder, then run `claude`. |
-| **Codex** | `cd` into the folder, then run `codex`. |
-| **OpenCode** | `cd` into the folder, then run `opencode`. |
-| **Gemini CLI** | `cd` into the folder, then run `gemini`. |
-
-### Step 3 · Paste your Apify token
-
-Ask your agent: *"Open the .env file for my Apify token"*. It copies `.env.example` to `.env` and opens it. Paste your token right after the equals sign and save:
-
-```text
-APIFY_TOKEN=apify_api_xxxxxxxxxxxxxxxxxxxxxxxx
-```
-
-### Step 4 · Start
-
-Type:
-
-```text
-/hirewire
-```
-
-In agents without slash commands, write *"start HireWire"*. From here the agent guides you through the four steps: interview, routes, first search and dashboard.
+**Recorrido:** Por revisar → Me interesa → CV listo → Aplicados. Cuando descartás un aviso elegís el motivo con un clic ("ventas o atención", "no es remoto de verdad"…), y el agente puede usar esos motivos para afinar las próximas búsquedas.
 
 ---
 
-## 🧭 Everyday use
+## 🚀 Cómo empezar
 
-| You want to… | Say to your agent |
-| --- | --- |
-| Continue where you left off | `/hirewire` or *"what's next?"* |
-| Run a new search | `/search` or *"search for jobs"* |
-| Open the dashboard | *"open the dashboard"* (or run `python scripts/dashboard.py`) |
-| Get a CV for a job | Press **CV in English / CV in Spanish** on the dashboard and paste the copied request |
-| Fix jobs that are not really remote or not open to your country | *"I'm seeing jobs that aren't remote"*: the agent finds the pattern and tightens the rules |
-| Update your experience | `/profile` |
-| Change job types, country or preferences | `/routes` |
+> 💡 **No necesitás ninguna clave de IA ni de API.** HireWire usa la IA del agente que ya tenés: sale de tu plan de Claude, ChatGPT o Google, no de una cuenta aparte. Para empezar tampoco hace falta Apify: las búsquedas usan portales gratuitos.
 
-Before any LinkedIn or Indeed search, the agent tells you the spending cap and waits for your OK.
+### Qué necesitás
 
----
+1. **Un agente de IA.** Abajo te ayudamos a elegir.
+2. **Python 3.10 o más nuevo.** No hace falta que lo instales vos: el agente lo revisa y, si falta, te pide permiso para instalarlo.
 
-## 💸 What it costs
+No hace falta saber programar.
 
-| Item | Cost |
-| --- | --- |
-| HireWire | Free and open source (MIT) |
-| Five free job boards | Free, no account |
-| LinkedIn search (via Apify) | ≈ USD 0.40 per full search |
-| Indeed search (via Apify) | ≈ USD 0.05 per full search |
-| Apify free plan | USD 5 of credit per month → several full searches |
-| AI usage | Comes from your agent's plan. Each search classifies at most 60 listings by default, the most relevant ones, after the free filters. |
+### ¿Qué agente uso?
 
-Every Apify source has a hard spending cap (`max_spend_usd`), so a search can never go over it.
-
----
-
-## 🔎 Job sources
-
-| Source | Cost | Why it's there |
+| Agente | Cómo se usa | ¿Sirve sin pagar? |
 | --- | --- | --- |
-| [Himalayas](https://himalayas.app) | free | Remote jobs filtered by your country |
-| [Built In](https://builtin.com) | free | Remote jobs with the exact list of countries allowed to apply |
-| [We Work Remotely](https://weworkremotely.com) | free | Paid postings, very little spam; region per job |
-| [Remotive](https://remotive.com) | free | Curated remote jobs; region per job |
-| [Jobicy](https://jobicy.com) | free | Remote jobs filtered by region |
-| [Get on Board](https://www.getonbrd.com) | free, optional | Tech jobs in Latin America |
-| LinkedIn (via Apify) | ≈ USD 0.40 | The largest volume |
-| Indeed (via Apify) | ≈ USD 0.05 | Extra volume from your national Indeed site |
+| **Claude, app de escritorio** (pestaña Code) · ⭐ recomendado | Con clics, sin terminal | No. Necesita Claude Pro o un plan superior. |
+| **[Antigravity](https://antigravity.google)** (Google) | Con clics, sin terminal | Sí. Plan gratis con una cuenta de Google, con límites semanales. |
+| **[Codex](https://openai.com/codex/)** (OpenAI) | App de escritorio o terminal | Sí. Viene incluido en ChatGPT Free, con poco uso. |
+| **[OpenCode](https://opencode.ai)** | Terminal | Sí, con sus modelos gratuitos (van cambiando). |
 
-Duplicates across sources are removed before the AI reads anything. After each search, the agent reports how many A and B jobs each source brought, so you can switch off the ones that don't pay off. Every job links to its original posting.
+**Con un plan gratis** alcanza para la entrevista, las búsquedas y algunos CVs, pero los límites de uso se terminan antes. Pedile al agente que clasifique menos avisos por búsqueda (por ejemplo, 20). Los modelos gratuitos también se equivocan más: revisá con más cuidado las clasificaciones y cada CV antes de usarlo.
 
----
+<sub>Planes vigentes en septiembre de 2026. Cambian seguido: confirmalos en la página de cada agente.</sub>
 
-## 🛡️ What makes it different
+### Camino recomendado: la app de escritorio de Claude
 
-- **🌎 Fake-remote detection, adapted to you.** A job is *eligible* only with two quotes from the listing: one proving it is remote and one proving it is open to where you live or can legally work. "Remote" alone is marked *unclear*. When a listing names no country, the AI reads it whole for clues ("401(k)" or "US medical plan" point to US-only; "we hire through Deel" points to international).
-- **🧾 Evidence bank against invented CVs.** Every CV line must trace back to a confirmed fact, and every fact carries its own limits. Participation is never turned into leadership.
-- **📄 Harvard-format CVs without AI filler.** One column, standard headings, right-aligned dates, readable by ATS filters. A banned-phrase list keeps out "passionate", "results-driven", "spearheaded" and the like.
-- **💰 Cheap by design.** Free filters remove most of the noise before the AI reads anything: in real use, ~60 % of irrelevant listings with zero good jobs lost.
-- **🧠 Prompt-injection aware.** Job listings are treated as data. Hidden instructions inside a listing are ignored and flagged.
-- **🌐 Bilingual.** Interview, dashboard and CVs in English or Spanish.
-- **📦 Zero dependencies.** Python standard library only, including the DOCX generator.
+Todo con clics, sin abrir una terminal.
 
-### 📊 First real run
+1. Descargá la app desde **[claude.com/download](https://claude.com/download)** e iniciá sesión.
+2. Abrí la pestaña **Code** y empezá una sesión nueva. Cuando te pida una carpeta, elegí **Documentos**.
+3. Pegá esta frase y enviala:
 
-Built for and tested by a legal professional in Argentina looking for remote work with foreign employers:
+   ```text
+   Instalá HireWire desde https://github.com/mickybuilds/hirewire-remote_job_scout siguiendo su INSTALL.md.
+   ```
 
-- ~1,100 listings fetched in the first search → 750 unique after removing duplicates
-- 27 A/B matches, each with the eligibility sentence quoted
-- **USD 0.36** of Apify credit, with a USD 1 cap
+   El agente crea la carpeta `HireWire`, descarga los archivos y revisa Python. Si necesita instalar algo, te pide permiso y te explica qué hace.
+4. Empezá **otra sesión nueva** y esta vez elegí la carpeta **Documentos → HireWire**. Así el agente ve las instrucciones de HireWire.
+5. Escribí:
 
----
+   ```text
+   /hirewire
+   ```
 
-## 🔒 Your privacy
+   Desde acá el agente te guía: entrevista, rutas, primera búsqueda y tablero.
 
-Everything personal stays on your computer and is excluded from Git:
+<details>
+<summary><b>Otras opciones: Antigravity, Codex, OpenCode y agentes de terminal</b></summary>
 
-| Folder / file | What it holds |
+<br>
+
+Con cualquier agente, el proceso es el mismo:
+
+1. Pegale la frase de instalación de arriba.
+2. Cuando termine, abrí la carpeta `HireWire` en el agente.
+3. Escribí `/hirewire`, o *"empezar HireWire"* si tu agente no usa comandos con barra.
+
+| Agente | Cómo abrir la carpeta `HireWire` |
 | --- | --- |
-| `profile/` | Your CV, evidence bank, routes and search settings |
-| `data/` | Job listings, classifications, your statuses and notes |
-| `applications/` | Your tailored CVs |
-| `.env` | Your Apify token |
+| **Antigravity** (app) | Abrí la carpeta `HireWire` como espacio de trabajo (workspace). |
+| **Codex** (app) | Elegí la carpeta `HireWire` como proyecto. |
+| **Claude Code** (terminal) | Entrá a la carpeta con `cd` y ejecutá `claude`. |
+| **Codex** (terminal) | Entrá a la carpeta con `cd` y ejecutá `codex`. |
+| **OpenCode** | Entrá a la carpeta con `cd` y ejecutá `opencode`. |
+| **Antigravity CLI** | Entrá a la carpeta con `cd` y ejecutá `agy`. |
+| **Gemini CLI** (con plan pago de Google AI) | Entrá a la carpeta con `cd` y ejecutá `gemini`. |
 
-HireWire has no server and no analytics. The only outside calls are the job sources you enable and your own AI agent.
-
----
-
-## 🧰 Troubleshooting
-
-<details>
-<summary><b>"python is not recognized" / Python not found</b></summary>
-
-Ask your agent to install Python 3.10+. On Windows it can use `winget install Python.Python.3.12`; on macOS, `brew install python`. On macOS and Linux the command may be `python3` instead of `python`, and HireWire's instructions already account for it.
-</details>
-
-<details>
-<summary><b><code>/hirewire</code> does nothing or is "unknown"</b></summary>
-
-The agent must be running **inside** the HireWire folder (see Step 2). In agents without slash commands, write "start HireWire" instead.
-</details>
-
-<details>
-<summary><b>"APIFY_TOKEN missing in .env"</b></summary>
-
-Check that the file is named exactly `.env` (not `.env.txt`), that it is in the HireWire folder, and that the line reads `APIFY_TOKEN=` followed by your token with no spaces.
-</details>
-
-<details>
-<summary><b>The dashboard doesn't open</b></summary>
-
-Another program may be using port 8765. Run `python scripts/dashboard.py --port 8766` and open `http://localhost:8766`.
-</details>
-
-<details>
-<summary><b>I see jobs that are on-site, hybrid or not open to my country</b></summary>
-
-Tell your agent, with one or two examples. It finds why they got through, tightens the rule, checks that no good job is lost and cleans the dashboard.
-</details>
-
-<details>
-<summary><b>My Apify credit ran out</b></summary>
-
-Searches keep running with the five free sources. Apify renews the free credit every month.
-</details>
-
-<details>
-<summary><b>A search uses too much of my AI plan</b></summary>
-
-Lower `max_classify_per_run` in `profile/search.json` (default: 60). The rest of the listings wait for the next search.
 </details>
 
 ---
 
-## ⚙️ Under the hood
+## ➕ Extra: sumá LinkedIn e Indeed
+
+Es opcional. Los portales gratis alcanzan para empezar; sumalo si después querés más volumen.
+
+HireWire busca en LinkedIn e Indeed a través de **Apify**, un servicio que da USD 5 de crédito gratis por mes. Una búsqueda en Indeed cuesta centavos y una en LinkedIn, unos USD 0,40. Cada búsqueda tiene un tope de gasto, y el agente te pide OK antes de gastar crédito.
+
+1. **Creá una cuenta gratis.** Entrá a **[apify.com](https://apify.com)** y hacé clic en **Sign up free**. Podés registrarte con Google, GitHub o un correo. No piden tarjeta.
+2. **Copiá tu token.** En la consola de Apify: **Settings** (menú de la izquierda) → pestaña **API & Integrations** → **Personal API tokens** → ícono de **copiar**. El token empieza con `apify_api_`.
+3. **Guardalo vos en el archivo `.env`.** Decile al agente: *"Abrí el archivo .env para pegar mi token de Apify"*. Te abre el archivo; pegás el token justo después del signo igual, guardás y cerrás:
+
+   ```text
+   APIFY_TOKEN=apify_api_xxxxxxxxxxxxxxxxxxxxxxxx
+   ```
+
+   > ⚠️ **No le pegues el token al agente en el chat.** El token funciona como una contraseña: va solo en el archivo `.env`, que queda en tu computadora y nunca se sube. Así no pasa por la IA.
+
+4. **Activá las fuentes.** Decile al agente: *"Sumá Indeed y LinkedIn"*.
+
+> ⚖️ **Sobre LinkedIn.** Extraer datos de LinkedIn va contra sus términos de uso, por eso HireWire lo deja apagado y te pide confirmación antes de activarlo. El servicio de Apify lee avisos públicos sin usar tu cuenta ni tu contraseña de LinkedIn, pero lo usás bajo tu responsabilidad. Si preferís no usarlo, Indeed se puede activar solo.
+
+---
+
+## 🧭 Uso diario
+
+| Querés… | Decile a tu agente |
+| --- | --- |
+| Seguir donde quedaste | `/hirewire` o *"¿qué sigue?"* |
+| Hacer una búsqueda nueva | `/search` o *"buscá trabajos"* |
+| Abrir el tablero | *"abrí el tablero"* |
+| Un CV para un aviso | Tocá **CV en español / CV en inglés** en el tablero y pegá el pedido copiado |
+| Corregir avisos que no son remotos o no aceptan tu país | *"me aparecen trabajos que no son remotos"*: el agente encuentra el patrón y ajusta las reglas |
+| Actualizar tu experiencia | `/profile` |
+| Cambiar tipos de puesto, país o preferencias | `/routes` |
+
+Si sumaste LinkedIn o Indeed, antes de cada búsqueda con esas fuentes el agente te dice el tope de gasto y espera tu OK.
+
+---
+
+## 💸 Cuánto cuesta
+
+| Concepto | Costo |
+| --- | --- |
+| HireWire | Gratis y de código abierto (MIT) |
+| Cinco portales gratuitos | Gratis, sin cuenta |
+| Uso de IA | Sale del plan de tu agente, sin claves aparte. Cada búsqueda clasifica por defecto hasta 60 avisos, los más relevantes, después de los filtros gratuitos. |
+| Indeed (opcional, vía Apify) | ≈ USD 0,05 por búsqueda completa |
+| LinkedIn (opcional, vía Apify) | ≈ USD 0,40 por búsqueda completa |
+| Plan gratis de Apify | USD 5 de crédito por mes → varias búsquedas completas |
+
+Cada fuente de Apify tiene un tope de gasto (`max_spend_usd`), así que una búsqueda nunca lo puede superar.
+
+---
+
+## 🔎 Fuentes de avisos
+
+| Fuente | Costo | Por qué está |
+| --- | --- | --- |
+| [Himalayas](https://himalayas.app) | gratis | Remotos filtrados por tu país |
+| [Built In](https://builtin.com) | gratis | Remotos con la lista exacta de países que pueden aplicar |
+| [We Work Remotely](https://weworkremotely.com) | gratis | Avisos pagos, casi sin spam; región por aviso |
+| [Remotive](https://remotive.com) | gratis | Remotos curados; región por aviso |
+| [Jobicy](https://jobicy.com) | gratis | Remotos filtrados por región |
+| [Get on Board](https://www.getonbrd.com) | gratis, opcional | Tecnología en Latinoamérica |
+| Indeed (vía Apify) | ≈ USD 0,05, opcional | Volumen extra del sitio de Indeed de tu país |
+| LinkedIn (vía Apify) | ≈ USD 0,40, opcional | El mayor volumen. Apagado por defecto: [leé el aviso](#-extra-sumá-linkedin-e-indeed) |
+
+Los repetidos entre fuentes se eliminan antes de que la IA lea nada. Después de cada búsqueda, el agente informa cuántos avisos A y B aportó cada fuente, así podés apagar las que no rinden. Cada aviso enlaza a su publicación original.
+
+---
+
+## 🛡️ Qué lo hace distinto
+
+- **🌎 Detecta el falso remoto, adaptado a vos.** Un aviso es *elegible* solo con dos citas: una que pruebe que es remoto y otra que pruebe que acepta el lugar donde vivís o podés trabajar legalmente. "Remote" a secas queda como *dudoso*. Si el aviso no nombra ningún país, la IA lo lee entero buscando pistas ("401(k)" o "seguro médico de EE. UU." apuntan a solo EE. UU.; "contratamos por Deel" apunta a internacional).
+- **🧾 Banco de evidencia contra CVs inventados.** Cada línea del CV tiene que rastrearse a un hecho confirmado, y cada hecho tiene sus propios límites. Nunca convierte una participación en liderazgo.
+- **📄 CV formato Harvard sin relleno de IA.** Una columna, títulos estándar, fechas alineadas a la derecha, legible por filtros ATS. Una lista de frases prohibidas deja afuera "apasionada", "orientada a resultados", "amplia experiencia" y similares.
+- **💰 Barato por diseño.** Los filtros gratuitos sacan la mayor parte del ruido antes de que la IA lea nada: en uso real, cerca del 60 % de los avisos irrelevantes, sin perder ninguno bueno.
+- **🧠 Resistente a instrucciones escondidas.** Los avisos se tratan como datos. Si un aviso trae instrucciones escondidas para la IA, se ignoran y se marcan como alerta.
+- **🌐 Bilingüe.** Entrevista, tablero y CVs en español o inglés.
+- **📦 Sin dependencias.** Solo la biblioteca estándar de Python, incluido el generador de DOCX.
+
+### 📊 Primera búsqueda real
+
+Creado y probado por una profesional del derecho en Argentina que busca trabajo remoto con empleadores del exterior:
+
+- ~1.100 avisos traídos en la primera búsqueda → 750 únicos tras eliminar repetidos
+- 27 avisos A/B, cada uno con la frase de elegibilidad citada
+- **USD 0,36** de crédito de Apify, con un tope de USD 1
+
+---
+
+## 🔒 Tu privacidad
+
+Todo lo personal queda en tu computadora y está excluido de Git:
+
+| Carpeta / archivo | Qué guarda |
+| --- | --- |
+| `profile/` | Tu CV, banco de evidencia, rutas y configuración de búsqueda |
+| `data/` | Avisos, clasificaciones, tus estados y notas |
+| `applications/` | Tus CVs a medida |
+| `.env` | Tu token de Apify, si sumaste LinkedIn o Indeed |
+
+HireWire no tiene servidor ni analíticas. Lo único que sale de tu computadora son las consultas a las fuentes que activás y tu propio agente de IA.
+
+---
+
+## 🧰 Problemas frecuentes
 
 <details>
-<summary><b>Search pipeline</b></summary>
+<summary><b>"python no se reconoce" / no encuentra Python</b></summary>
 
-1. `fetch` queries each enabled source, removes duplicates (canonical URL and company + title) and applies free filters: excluded companies, residence or work-permit requirements for other countries, on-site or hybrid listings that never say "remote", unrelated job titles and old listings.
-2. `batch` ranks the pending listings by relevance (title match, domain terms, date) and splits the top ones into batches.
-3. One AI subagent per batch applies `config/criteria.md` with your profile and writes one JSON line per listing.
-4. `merge` validates every line (allowed values, your route ids, a location quote for every *eligible* job) and reports errors for a retry.
-5. `sources` and `test-prefilter` measure each source's yield and replay the filters against past classifications, so rules can be tuned without losing good jobs.
+Pedile a tu agente que instale Python 3.10 o más nuevo. En Windows puede usar `winget install Python.Python.3.12`; en macOS, `brew install python`. En macOS y Linux el comando puede ser `python3` en lugar de `python`, y las instrucciones de HireWire ya lo contemplan.
 </details>
 
 <details>
-<summary><b>Project structure</b></summary>
+<summary><b><code>/hirewire</code> no hace nada o dice que no existe</b></summary>
+
+El agente tiene que estar abierto **dentro** de la carpeta de HireWire (ver el paso 4 del camino recomendado). En agentes sin comandos con barra, escribí "empezar HireWire".
+</details>
+
+<details>
+<summary><b>Se me terminó el límite del plan gratis, o una búsqueda consume mucho</b></summary>
+
+Decile al agente: *"clasificá solo 20 avisos por búsqueda"*. El resto espera a la búsqueda siguiente. Los límites de los planes gratis se renuevan solos (por día o por semana, según el agente).
+</details>
+
+<details>
+<summary><b>El tablero no abre</b></summary>
+
+Puede que otro programa esté usando el puerto 8765. Pedile al agente que abra el tablero en otro puerto (8766).
+</details>
+
+<details>
+<summary><b>Me aparecen trabajos presenciales, híbridos o que no aceptan mi país</b></summary>
+
+Decíselo a tu agente, con uno o dos ejemplos. Encuentra por qué se colaron, ajusta la regla, comprueba que no se pierda ningún aviso bueno y limpia el tablero.
+</details>
+
+<details>
+<summary><b>"APIFY_TOKEN missing in .env"</b> (solo si sumaste LinkedIn o Indeed)</summary>
+
+Revisá que el archivo se llame exactamente `.env` (no `.env.txt`), que esté en la carpeta de HireWire y que la línea diga `APIFY_TOKEN=` seguido de tu token, sin espacios.
+</details>
+
+<details>
+<summary><b>Se me terminó el crédito de Apify</b></summary>
+
+Las búsquedas siguen funcionando con las cinco fuentes gratis. Apify renueva el crédito gratis cada mes.
+</details>
+
+---
+
+## ⚙️ Por dentro
+
+<details>
+<summary><b>Cómo se procesa una búsqueda</b></summary>
+
+1. `fetch` consulta cada fuente activa, elimina repetidos (URL canónica y empresa + puesto) y aplica filtros gratuitos: empresas excluidas, exigencias de residencia o permiso de trabajo de otros países, avisos presenciales o híbridos que nunca dicen "remoto", títulos de otros rubros y avisos viejos.
+2. `batch` ordena los avisos pendientes por relevancia (coincidencia de título, términos del rubro, fecha) y divide los mejores en lotes.
+3. Un subagente de IA por lote aplica `config/criteria.md` con tu perfil y escribe una línea JSON por aviso.
+4. `merge` valida cada línea (valores permitidos, tus rutas, una cita de ubicación para cada aviso *elegible*) e informa los errores para reintentar.
+5. `sources` y `test-prefilter` miden el rendimiento de cada fuente y vuelven a pasar los filtros sobre clasificaciones anteriores, para ajustar reglas sin perder avisos buenos.
+</details>
+
+<details>
+<summary><b>Estructura del proyecto</b></summary>
 
 ```text
-.claude/skills/        entry point and the four stages (/hirewire, /profile, /routes, /search, /cv)
-AGENTS.md              agent instructions (CLAUDE.md and GEMINI.md import it)
-INSTALL.md             installation steps the agent follows
-config/criteria.md     classification rules: location, route, level, priority, output format
-config/cv_style.md     CV format and writing rules
-templates/             starting point for your profile files
+.claude/skills/        punto de entrada y las cuatro etapas (/hirewire, /profile, /routes, /search, /cv)
+AGENTS.md              instrucciones para cualquier agente (CLAUDE.md y GEMINI.md lo importan)
+.agents/               regla y skills para Antigravity (apuntan a AGENTS.md y .claude/skills)
+INSTALL.md             pasos de instalación que sigue el agente
+config/criteria.md     reglas de clasificación: ubicación, ruta, nivel, prioridad, formato de salida
+config/cv_style.md     formato del CV y reglas de redacción
+templates/             punto de partida de los archivos de tu perfil
 scripts/hirewire.py    pipeline: check, fetch, batch, merge, status, sources, refilter, test-prefilter
-scripts/dashboard.py   local dashboard server
-scripts/make_docx.py   Markdown → Harvard-format DOCX and PDF
-web/                   dashboard (local and demo mode)
-docs/                  images and the interactive diagram
+scripts/dashboard.py   servidor del tablero local
+scripts/make_docx.py   Markdown → DOCX y PDF formato Harvard
+web/                   tablero (modo local y demo)
+docs/                  imágenes y el diagrama interactivo
 
-profile/  data/  applications/  .env     your private data, ignored by Git
+profile/  data/  applications/  .env     tus datos privados, ignorados por Git
 ```
 </details>
 
 <details>
-<summary><b>Commands</b></summary>
+<summary><b>Comandos</b></summary>
 
 ```bash
-python scripts/hirewire.py check          # validate your profile folder
-python scripts/hirewire.py fetch          # free sources only
-python scripts/hirewire.py fetch --with-apify   # also LinkedIn and Indeed (spends Apify credit)
-python scripts/hirewire.py batch          # prepare the most relevant listings for the AI
-python scripts/hirewire.py merge          # validate and store the AI results
-python scripts/hirewire.py status         # where you are and what's next
-python scripts/hirewire.py sources        # A/B/C yield per source
-python scripts/dashboard.py               # open the dashboard at http://localhost:8765
+python scripts/hirewire.py check          # valida tu carpeta de perfil
+python scripts/hirewire.py fetch          # solo fuentes gratis
+python scripts/hirewire.py fetch --with-apify   # también LinkedIn e Indeed, si están activas (gasta crédito de Apify)
+python scripts/hirewire.py batch          # prepara los avisos más relevantes para la IA
+python scripts/hirewire.py merge          # valida y guarda los resultados de la IA
+python scripts/hirewire.py status         # en qué etapa estás y qué sigue
+python scripts/hirewire.py sources        # rendimiento A/B/C por fuente
+python scripts/dashboard.py               # abre el tablero en http://localhost:8765
 ```
 
-You rarely need these: the agent runs them for you.
+Casi nunca los vas a necesitar: el agente los ejecuta por vos.
 </details>
 
 ---
 
-## 👩‍💻 Author
+## 👩‍💻 Autora
 
-Made by **Micaela D. Asquini**, a tech lawyer who loves building things: AI legal solutions, legal ops and legal tech. HireWire began as her own job search.
+Creado por **Micaela D. Asquini**, abogada tech a la que le gusta crear cosas: soluciones legales con IA, legal ops y legal tech. HireWire nació como su propia búsqueda laboral.
 
-## 📄 License
+## 📄 Licencia
 
-[MIT](LICENSE). Job listings belong to their publishers; HireWire links to the original postings and does not republish them.
+[MIT](LICENSE). Los avisos pertenecen a quienes los publican; HireWire enlaza a las publicaciones originales y no las republica.

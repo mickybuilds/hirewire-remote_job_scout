@@ -22,7 +22,7 @@ Act on `next_stage`:
 | `search` | Say everything is set up and start the search workflow. |
 | `classify` | There are listings fetched but not classified. Offer to classify them (search workflow, from step 2). |
 | `cv` | `interested_without_cv` jobs are waiting for a CV. List them (title and company, from `data/jobs.jsonl`) and ask which ones and in which language, then follow the CV workflow. |
-| `review` | Everything is up to date. Show `by_priority` and `last_search`, and offer: a new search, opening the dashboard, a CV for a job, updating the profile, or fixing location rules if non-eligible jobs show up. |
+| `review` | Everything is up to date. Show `by_priority` and `last_search`, and offer: a new search, opening the dashboard, a CV for a job, updating the profile, or fixing location rules if non-eligible jobs show up. If LinkedIn and Indeed are disabled in `profile/search.json`, mention once that they can be added (routes workflow, step 7). |
 
 If `profile/EVIDENCE.md` looks unfinished (many facts under "Unconfirmed", skills section empty), offer to resume the interview before moving on.
 

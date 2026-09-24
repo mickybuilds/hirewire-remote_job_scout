@@ -2,42 +2,41 @@
   "schema_version": 2,
   "diagram_type": "workflow",
   "meta": {
-    "title": "How HireWire works",
-    "locale": "en",
+    "title": "Cómo funciona HireWire",
     "quality_profile": "showcase",
-    "output": "docs/how-it-works.html"
+    "output": "docs/how-it-works.es.html"
   },
   "lanes": [
     {
       "id": "you",
-      "label": "You"
+      "label": "Vos"
     },
     {
       "id": "agent",
-      "label": "Your AI agent"
+      "label": "Tu agente de IA"
     },
     {
       "id": "pipeline",
-      "label": "Search pipeline"
+      "label": "Búsqueda"
     }
   ],
   "phases": [
     {
       "id": "setup",
-      "label": "Set up once",
+      "label": "Una sola vez",
       "fromCol": 0,
       "toCol": 1
     },
     {
       "id": "search",
-      "label": "Configure + search",
+      "label": "Configurar y buscar",
       "fromCol": 2,
       "toCol": 3,
       "variant": "emphasis"
     },
     {
       "id": "apply",
-      "label": "Pick and apply",
+      "label": "Elegir y postular",
       "fromCol": 4,
       "toCol": 5,
       "variant": "dashed"
@@ -60,8 +59,8 @@
       "lane": "you",
       "col": 0,
       "type": "external",
-      "label": "Install",
-      "sublabel": "paste one sentence",
+      "label": "Instalar",
+      "sublabel": "pegás una frase",
       "width": 140
     },
     {
@@ -69,8 +68,8 @@
       "lane": "you",
       "col": 4,
       "type": "frontend",
-      "label": "Local dashboard",
-      "sublabel": "review, mark, download",
+      "label": "Tablero local",
+      "sublabel": "revisar, marcar, bajar",
       "width": 150
     },
     {
@@ -78,8 +77,8 @@
       "lane": "you",
       "col": 5,
       "type": "external",
-      "label": "You apply",
-      "sublabel": "never automatic",
+      "label": "Postulás vos",
+      "sublabel": "nunca automático",
       "width": 140
     },
     {
@@ -88,7 +87,7 @@
       "col": 1,
       "type": "backend",
       "label": "/profile",
-      "sublabel": "CV + short interview",
+      "sublabel": "CV + entrevista corta",
       "width": 150
     },
     {
@@ -97,8 +96,8 @@
       "col": 2,
       "type": "security",
       "label": "/routes",
-      "sublabel": "where you can work",
-      "tag": "country · permit · remote",
+      "sublabel": "dónde podés trabajar",
+      "tag": "país · permiso · remoto",
       "width": 150
     },
     {
@@ -106,8 +105,8 @@
       "lane": "agent",
       "col": 3,
       "type": "backend",
-      "label": "AI classifier",
-      "sublabel": "remote + country quotes",
+      "label": "Clasificador IA",
+      "sublabel": "cita remoto + país",
       "tag": "A / B / C",
       "width": 150
     },
@@ -117,7 +116,7 @@
       "col": 5,
       "type": "backend",
       "label": "/cv",
-      "sublabel": "Harvard, ES or EN",
+      "sublabel": "Harvard, ES o EN",
       "width": 140
     },
     {
@@ -126,7 +125,7 @@
       "col": 1,
       "type": "database",
       "label": "EVIDENCE.md",
-      "sublabel": "facts with limits",
+      "sublabel": "hechos con límites",
       "width": 150
     },
     {
@@ -134,8 +133,8 @@
       "lane": "pipeline",
       "col": 2,
       "type": "cloud",
-      "label": "Job sources",
-      "sublabel": "5 free + optional Apify",
+      "label": "Fuentes de avisos",
+      "sublabel": "5 gratis + Apify opcional",
       "width": 150
     },
     {
@@ -143,9 +142,9 @@
       "lane": "pipeline",
       "col": 3,
       "type": "security",
-      "label": "Free prefilter",
-      "sublabel": "dedupe · fake remote",
-      "tag": "top 60 by relevance",
+      "label": "Filtro gratis",
+      "sublabel": "repetidos · falso remoto",
+      "tag": "top 60 por relevancia",
       "width": 150
     }
   ],
@@ -167,7 +166,7 @@
       "id": "profile-evidence",
       "from": "profile",
       "to": "evidence",
-      "label": "writes",
+      "label": "escribe",
       "variant": "dashed",
       "role": "branch"
     },
@@ -194,28 +193,28 @@
       "id": "classify-dashboard",
       "from": "classify",
       "to": "dashboard",
-      "label": "ranked",
+      "label": "ordenados",
       "variant": "emphasis"
     },
     {
       "id": "dashboard-cv",
       "from": "dashboard",
       "to": "cv",
-      "label": "Interested",
+      "label": "Me interesa",
       "variant": "default"
     },
     {
       "id": "cv-apply",
       "from": "cv",
       "to": "apply",
-      "label": "CV ready",
+      "label": "CV listo",
       "variant": "emphasis"
     },
     {
       "id": "evidence-cv",
       "from": "evidence",
       "to": "cv",
-      "label": "only these facts",
+      "label": "solo estos hechos",
       "variant": "dashed",
       "role": "branch",
       "fromSide": "bottom",
@@ -226,20 +225,20 @@
   "cards": [
     {
       "dot": "emerald",
-      "title": "What it costs",
+      "title": "Cuánto cuesta",
       "items": [
-        "No AI key: it runs on your agent's plan",
-        "5 free job boards, no account needed",
-        "Optional: LinkedIn + Indeed on Apify's free credit, with a cap"
+        "Sin claves de IA: usa el plan de tu agente",
+        "5 portales gratis, sin cuenta",
+        "Opcional: LinkedIn + Indeed con el crédito gratis de Apify, con tope"
       ]
     },
     {
       "dot": "cyan",
-      "title": "What it guarantees",
+      "title": "Qué garantiza",
       "items": [
-        "Eligible = a remote quote + a country quote",
-        "Every CV line traces back to EVIDENCE.md",
-        "Your data stays on your computer"
+        "Elegible = cita de remoto + cita de país",
+        "Cada línea del CV sale de EVIDENCE.md",
+        "Tus datos quedan en tu computadora"
       ]
     }
   ]

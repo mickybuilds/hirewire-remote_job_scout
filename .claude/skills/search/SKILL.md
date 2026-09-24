@@ -23,7 +23,7 @@ python scripts/hirewire.py fetch
 
 Queries the enabled sources in `profile/search.json`. Stores only new listings and deduplicates them by URL and by company + title. It discards the obvious automatically: excluded companies, explicit location restrictions (on-site, hybrid, residence in another country), titles from other fields, and old or expired listings. Non-eligible listings never show up on the dashboard.
 
-Free sources: Himalayas, Built In, We Work Remotely, Remotive, Jobicy and, optionally, Get on Board. Without a flag, only these run. Apify sources (LinkedIn, Indeed) spend credit and need `--with-apify`.
+Free sources: Himalayas, Built In, We Work Remotely, Remotive, Jobicy and, optionally, Get on Board. Without a flag, only these run. Apify sources (LinkedIn, Indeed) are optional, disabled by default, spend credit and need `--with-apify`. To add them, follow step 7 of the routes workflow.
 
 Rules for Apify:
 - Before running with `--with-apify`, tell the user the total cap (the sum of `max_spend_usd` of the enabled Apify sources in search.json) and wait for a yes. One confirmation covers one run.

@@ -6,7 +6,7 @@ Speak to the user in their language. Default to the `language` in `profile/searc
 
 ## Workflow
 
-Each stage is a step-by-step workflow. When the user asks for one, read the file and follow it. In Claude Code they are also slash commands.
+Each stage is a step-by-step workflow in `.claude/skills/<stage>/SKILL.md`. The folder name comes from Claude Code, but the files are plain Markdown for any agent. Before starting a stage, read its file completely and follow it; do not work from memory. In Claude Code the stages are also slash commands. In other agents, treat `/hirewire`, `/profile`, `/routes`, `/search` or `/cv` typed by the user as a request for that stage.
 
 | Stage | Command | Workflow | Output |
 | --- | --- | --- | --- |
@@ -20,7 +20,7 @@ Each stage is a step-by-step workflow. When the user asks for one, read the file
 - Messages starting with "HireWire:" come from the dashboard buttons. A request for a CV for a job id is stage 4.
 - If the user says listings are not remote or not open to their country, follow "Tuning location rules later" in the routes workflow.
 - To install HireWire in a new folder, follow `INSTALL.md`.
-- To set up the Apify token: if `.env` does not exist, copy `.env.example` to `.env`; then open it for the user in their editor. Never read, print or ask for the token.
+- LinkedIn and Indeed through Apify are optional and disabled by default. To add them, follow step 7 of the routes workflow. The user pastes the Apify token in `.env` themselves: open the file for them, and never read, print or ask for the token.
 
 ## Layout
 
