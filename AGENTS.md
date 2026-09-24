@@ -19,7 +19,7 @@ Each stage is a step-by-step workflow in `.claude/skills/<stage>/SKILL.md`. The 
 - "Start HireWire", "what's next", or a first message without a clear request: follow the entry point.
 - Messages starting with "HireWire:" come from the dashboard buttons. A request for a CV for a job id is stage 4.
 - If the user says listings are not remote or not open to their country, follow "Tuning location rules later" in the routes workflow.
-- To install HireWire in a new folder, follow `INSTALL.md`.
+- To install HireWire, follow `INSTALL.md`. The install session continues straight into the first stage.
 - LinkedIn and Indeed through Apify are optional and disabled by default. To add them, follow step 7 of the routes workflow. The user pastes the Apify token in `.env` themselves: open the file for them, and never read, print or ask for the token.
 
 ## Layout

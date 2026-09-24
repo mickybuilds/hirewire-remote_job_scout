@@ -120,15 +120,8 @@ Todo con clics, sin abrir una terminal.
    Instalá HireWire desde https://github.com/mickybuilds/hirewire-remote_job_scout siguiendo su INSTALL.md.
    ```
 
-   El agente crea la carpeta `HireWire`, descarga los archivos y revisa Python. Si necesita instalar algo, te pide permiso y te explica qué hace.
-4. Empezá **otra sesión nueva** y esta vez elegí la carpeta **Documentos → HireWire**. Así el agente ve las instrucciones de HireWire.
-5. Escribí:
-
-   ```text
-   /hirewire
-   ```
-
-   Desde acá el agente te guía: entrevista, rutas, primera búsqueda y tablero.
+   El agente crea la carpeta `HireWire`, descarga los archivos, revisa Python y **arranca la entrevista en la misma sesión**. Si necesita instalar algo, te pide permiso y te explica qué hace. Desde ahí te guía: entrevista, rutas, primera búsqueda y tablero.
+4. **Las próximas veces**, empezá una sesión nueva eligiendo la carpeta **Documentos → HireWire** y escribí `/hirewire`: sigue donde quedaste. Así también funcionan los comandos con barra (`/search`, `/cv`…), que en la sesión de instalación pueden no andar.
 
 <details>
 <summary><b>Otras opciones: Antigravity, Codex, OpenCode y agentes de terminal</b></summary>
@@ -137,11 +130,10 @@ Todo con clics, sin abrir una terminal.
 
 Con cualquier agente, el proceso es el mismo:
 
-1. Pegale la frase de instalación de arriba.
-2. Cuando termine, abrí la carpeta `HireWire` en el agente.
-3. Escribí `/hirewire`, o *"empezar HireWire"* si tu agente no usa comandos con barra.
+1. Abrí el agente en la carpeta donde quieras instalarlo (por ejemplo, Documentos) y pegale la frase de instalación de arriba. Instala y arranca la entrevista ahí mismo.
+2. Las próximas veces, abrí la carpeta `HireWire` en el agente y escribí `/hirewire`, o *"empezar HireWire"* si tu agente no usa comandos con barra.
 
-| Agente | Cómo abrir la carpeta `HireWire` |
+| Agente | Cómo abrir la carpeta `HireWire` las próximas veces |
 | --- | --- |
 | **Antigravity** (app) | Abrí la carpeta `HireWire` como espacio de trabajo (workspace). |
 | **Codex** (app) | Elegí la carpeta `HireWire` como proyecto. |
@@ -271,7 +263,7 @@ Pedile a tu agente que instale Python 3.10 o más nuevo. En Windows puede usar `
 <details>
 <summary><b><code>/hirewire</code> no hace nada o dice que no existe</b></summary>
 
-El agente tiene que estar abierto **dentro** de la carpeta de HireWire (ver el paso 4 del camino recomendado). En agentes sin comandos con barra, escribí "empezar HireWire".
+Los comandos con barra funcionan cuando el agente está abierto **dentro** de la carpeta de HireWire (ver el paso 4 del camino recomendado). Mientras tanto, pedilo con palabras: "empezar HireWire", "buscá trabajos".
 </details>
 
 <details>

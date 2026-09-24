@@ -120,15 +120,8 @@ All point and click, no terminal.
    Install HireWire from https://github.com/mickybuilds/hirewire-remote_job_scout following its INSTALL.md.
    ```
 
-   The agent creates the `HireWire` folder, downloads the files and checks Python. If it needs to install anything, it asks your permission and explains what it does.
-4. Start **another new session**, and this time choose the **Documents → HireWire** folder. This way the agent sees HireWire's instructions.
-5. Type:
-
-   ```text
-   /hirewire
-   ```
-
-   From here the agent guides you: interview, routes, first search and dashboard.
+   The agent creates the `HireWire` folder, downloads the files, checks Python and **starts the interview in the same session**. If it needs to install anything, it asks your permission and explains what it does. From there it guides you: interview, routes, first search and dashboard.
+4. **Next time**, start a new session choosing the **Documents → HireWire** folder and type `/hirewire`: it picks up where you left off. This also makes slash commands (`/search`, `/cv`…) work, which may not work in the install session.
 
 <details>
 <summary><b>Other options: Antigravity, Codex, OpenCode and terminal agents</b></summary>
@@ -137,11 +130,10 @@ All point and click, no terminal.
 
 With any agent, the process is the same:
 
-1. Paste the install sentence above.
-2. When it finishes, open the `HireWire` folder in the agent.
-3. Type `/hirewire`, or *"start HireWire"* if your agent has no slash commands.
+1. Open the agent in the folder where you want to install it (for example, Documents) and paste the install sentence above. It installs and starts the interview right there.
+2. Next time, open the `HireWire` folder in the agent and type `/hirewire`, or *"start HireWire"* if your agent has no slash commands.
 
-| Agent | How to open the `HireWire` folder |
+| Agent | How to open the `HireWire` folder next time |
 | --- | --- |
 | **Antigravity** (app) | Open the `HireWire` folder as the workspace. |
 | **Codex** (app) | Choose the `HireWire` folder as the project. |
@@ -271,7 +263,7 @@ Ask your agent to install Python 3.10+. On Windows it can use `winget install Py
 <details>
 <summary><b><code>/hirewire</code> does nothing or is "unknown"</b></summary>
 
-The agent must be running **inside** the HireWire folder (see step 4 of the recommended path). In agents without slash commands, write "start HireWire" instead.
+Slash commands work when the agent is running **inside** the HireWire folder (see step 4 of the recommended path). Until then, ask in words: "start HireWire", "search for jobs".
 </details>
 
 <details>
