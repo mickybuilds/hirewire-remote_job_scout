@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HireWire Dashboard</title>
+<meta name="description" content="Remote job listings classified against a candidate's evidence-backed profile.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%232f5d50'/><path d='M7 20l5-9 4 7 3-4 6 6' stroke='white' stroke-width='2.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<style>
+:root {
+  --bg: #f6f5f2; --panel: #ffffff; --text: #1d1d1b; --muted: #6b6a66; --line: #e3e1dc;
+  --accent: #2f5d50; --accent-soft: #e3eee9;
+  --a: #1f7a4d; --a-soft: #dcf1e5; --b: #8a6d12; --b-soft: #f6ecc9; --c: #5b5b8a; --c-soft: #e6e6f3;
+  --x: #9a3b33; --x-soft: #f5e0dd; --quote: #f1efe9;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #161715; --panel: #1f201e; --text: #ecebe6; --muted: #9c9a93; --line: #34352f;
+    --accent: #7fc2a8; --accent-soft: #23352e;
+    --a: #6fd29c; --a-soft: #1c3527; --b: #e0c060; --b-soft: #3a3219; --c: #a9a9e0; --c-soft: #2a2a40;
+    --x: #e58a80; --x-soft: #3d2320; --quote: #262723;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #161715; --panel: #1f201e; --text: #ecebe6; --muted: #9c9a93; --line: #34352f;
+  --accent: #7fc2a8; --accent-soft: #23352e;
+  --a: #6fd29c; --a-soft: #1c3527; --b: #e0c060; --b-soft: #3a3219; --c: #a9a9e0; --c-soft: #2a2a40;
+  --x: #e58a80; --x-soft: #3d2320; --quote: #262723;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+header { position: sticky; top: 0; z-index: 5; background: var(--bg); border-bottom: 1px solid var(--line); padding: 14px 16px 10px; }
+.wrap { max-width: 1060px; margin: 0 auto; }
+.bar { display: flex; align-items: baseline; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
+h1 { font-size: 18px; margin: 0; font-weight: 650; letter-spacing: -.01em; }
+#stats { color: var(--muted); font-size: 13px; }
+.lang { margin-left: auto; display: flex; gap: 2px; }
+.lang button { font: inherit; font-size: 12px; border: 1px solid var(--line); background: var(--panel); color: var(--muted); padding: 2px 8px; cursor: pointer; }
+.lang button:first-child { border-radius: 6px 0 0 6px; } .lang button:last-child { border-radius: 0 6px 6px 0; }
+.lang button[aria-pressed="true"] { color: var(--accent); border-color: var(--accent); font-weight: 600; }
+.demo { background: var(--b-soft); color: var(--b); font-size: 13px; padding: 7px 12px; border-radius: 8px; margin-bottom: 10px; }
+.demo a { color: inherit; }
+.tabs { display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: 10px; align-items: center; }
+.tab { border: 1px solid var(--line); background: var(--panel); color: var(--text); border-radius: 999px; padding: 5px 12px; cursor: pointer; font: inherit; font-size: 13px; }
+.tab[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+.tab .n { opacity: .7; margin-left: 4px; }
+.tab.archive { background: transparent; color: var(--muted); border-style: dashed; }
+.tab.archive[aria-pressed="true"] { background: var(--muted); border-color: var(--muted); border-style: solid; color: var(--bg); }
+.sep { width: 1px; height: 20px; background: var(--line); margin: 0 6px; }
+.filters { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.filters select, .filters input[type=search] { font: inherit; font-size: 13px; padding: 5px 8px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); color: var(--text); max-width: 100%; }
+.filters input[type=search] { flex: 1; min-width: 160px; }
+main { padding: 14px 16px 60px; }
+.hint { color: var(--muted); font-size: 13.5px; margin: 0 0 12px; }
+.empty { color: var(--muted); padding: 40px 0; text-align: center; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; margin-bottom: 10px; }
+.card.dim { opacity: .62; }
+.top { display: flex; gap: 12px; align-items: flex-start; }
+.prio { flex: none; width: 34px; height: 34px; border-radius: 8px; display: grid; place-items: center; font-weight: 700; font-size: 15px; }
+.p-A { background: var(--a-soft); color: var(--a); } .p-B { background: var(--b-soft); color: var(--b); }
+.p-C { background: var(--c-soft); color: var(--c); } .p-X { background: var(--x-soft); color: var(--x); }
+.p-none { background: var(--quote); color: var(--muted); font-size: 12px; }
+.head { flex: 1; min-width: 0; }
+.title { font-weight: 620; font-size: 15.5px; color: var(--text); text-decoration: none; overflow-wrap: anywhere; }
+.title:hover { text-decoration: underline; }
+.company { color: var(--muted); font-size: 13.5px; }
+.badges { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 6px; }
+.badge { font-size: 11.5px; padding: 2px 8px; border-radius: 999px; background: var(--quote); color: var(--muted); white-space: nowrap; }
+.badge.ok { background: var(--a-soft); color: var(--a); } .badge.warn { background: var(--b-soft); color: var(--b); }
+.badge.new { background: var(--accent); color: var(--bg); font-weight: 600; }
+.reason { margin: 10px 0 0; font-size: 14px; }
+.actions { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; align-items: center; }
+.btn { font: inherit; font-size: 13px; border: 1px solid var(--line); background: var(--panel); color: var(--text); border-radius: 8px; padding: 5px 11px; cursor: pointer; text-decoration: none; display: inline-block; }
+.btn:hover { border-color: var(--accent); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--bg); font-weight: 600; }
+.btn.soft { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); font-weight: 600; }
+.btn.quiet { border-color: transparent; background: none; color: var(--muted); }
+.more { margin-left: auto; color: var(--muted); background: none; border: none; cursor: pointer; font: inherit; font-size: 13px; }
+.reasons { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; align-items: center; font-size: 13px; color: var(--muted); }
+.reasons .btn { font-size: 12.5px; padding: 3px 9px; }
+details.det { margin-top: 10px; border-top: 1px dashed var(--line); padding-top: 10px; font-size: 13.5px; }
+details.det summary { cursor: pointer; color: var(--muted); font-size: 13px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 20px; margin-top: 8px; }
+.grid h4 { margin: 0 0 3px; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); font-weight: 600; }
+.grid ul { margin: 0; padding-left: 18px; }
+.quote { background: var(--quote); border-left: 3px solid var(--line); padding: 6px 10px; border-radius: 4px; font-style: italic; }
+textarea { width: 100%; font: inherit; font-size: 13px; border: 1px solid var(--line); border-radius: 8px; padding: 6px 8px; background: var(--bg); color: var(--text); min-height: 52px; margin-top: 8px; }
+#toast { position: fixed; left: 50%; bottom: 20px; transform: translateX(-50%); background: var(--text); color: var(--bg); padding: 10px 16px; border-radius: 10px; font-size: 14px; max-width: calc(100% - 32px); box-shadow: 0 4px 16px rgba(0,0,0,.2); opacity: 0; pointer-events: none; transition: opacity .2s; }
+#toast.show { opacity: 1; }
+@media (max-width: 640px) { .grid { grid-template-columns: 1fr; } .more { margin-left: 0; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="bar">
+      <h1>HireWire</h1><span id="stats"></span>
+      <div class="lang" role="group" aria-label="Language"><button data-lang="en">EN</button><button data-lang="es">ES</button></div>
+    </div>
+    <div class="demo" id="demo" hidden></div>
+    <div class="tabs" id="tabs"></div>
+    <div class="filters">
+      <select id="f-prio" aria-label="Priority"></select>
+      <select id="f-route" aria-label="Route"></select>
+      <select id="f-geo" aria-label="Location"></select>
+      <select id="f-sort" aria-label="Sort"></select>
+      <input type="search" id="f-text">
+    </div>
+  </div>
+</header>
+<main><div class="wrap"><p class="hint" id="hint"></p><div id="list"></div></div></main>
+<div id="toast" role="status" aria-live="polite"></div>
+<script>
+const T = {
+  en: {
+    views: {new: "To review", interested: "Interested", cv: "CV ready", applied: "Applied", dismissed: "Dismissed"},
+    hints: {
+      new: "Mark the jobs you like as Interested. Dismiss the rest with a reason: it helps tune future searches.",
+      interested: "Choose the CV language. The request is copied: paste it in your agent's chat.",
+      cv: "Download the CV, apply on the company's site, then mark it as applied.",
+      applied: "Jobs you applied to, with the date.",
+      dismissed: "Dismissed jobs and why. Restore any of them if you change your mind."
+    },
+    prio: [["AB","Priority A and B"],["A","Only A"],["B","Only B"],["C","Only C"],["ABC","A, B and C"],["none","Unclassified"],["discard","Discarded by the classifier"],["auto","Auto-discarded"],["all","Everything"]],
+    allRoutes: "All routes", noRoute: "No route",
+    geo: [["","Any location"],["eligible","Eligible from {country}"],["unclear","Unclear"]],
+    geoBadge: {eligible: "Eligible from {country}", unclear: "Location unclear"},
+    sort: [["prio","Sort by priority"],["posted","Most recent"],["seen","Last fetched"]],
+    search: "Search title, company, text…",
+    stats: (n, a, b, u) => `${n} jobs · ${a} A · ${b} B` + (u ? ` · ${u} waiting for the next search` : ""),
+    market: {foreign: "Foreign employer", local: "Local employer"},
+    contract: {contractor: "Contractor", employee: "Employee"},
+    posted: "Posted", isNew: "New", autoPrefix: "Auto-discarded: ", pending: "Not classified yet.",
+    details: "Classification details", duties: "Core duties", geoEvidence: "Location evidence", gaps: "Gaps",
+    blockers: "Blockers", alerts: "Alerts", evidence: "Matching evidence", location: "Source location", type: "Employment type",
+    interested: "Interested", dismiss: "Dismiss", back: "Back to review", restore: "Restore", undo: "Undo",
+    cvEs: "CV in Spanish", cvEn: "CV in English", cvOther: "Another CV", applied: "I applied", appliedOn: "Applied on",
+    view: "View job ↗", apply: "Apply ↗", addNote: "+ Note", editNote: "Edit note", notePh: "Personal note",
+    whyDismiss: "Why?", reasons: {sales_support: "Sales or support", level: "Wrong level", not_remote: "Not really remote", topic: "Not my field", other: "Other"},
+    prompt: (lang, j) => `HireWire: write the CV in ${lang === "es" ? "Spanish" : "English"} for job ${j.id} (${j.title} — ${j.company}).`,
+    copied: "Copied. Paste it in your agent's chat.",
+    empty: "No jobs here with these filters.", saveError: "Could not save",
+    demo: 'Demo with fictional sample data. Changes stay in this browser. <a href="https://github.com/mickybuilds/hirewire-remote_job_scout" target="_blank" rel="noopener">Install HireWire</a> to run it on your own profile.'
+  },
+  es: {
+    views: {new: "Por revisar", interested: "Me interesa", cv: "CV listo", applied: "Aplicados", dismissed: "Descartados"},
+    hints: {
+      new: "Marcá los avisos que te gustan como Me interesa. Descartá el resto con un motivo: sirve para afinar las próximas búsquedas.",
+      interested: "Elegí el idioma del CV. El pedido se copia: pegalo en el chat de tu agente.",
+      cv: "Descargá el CV, postulá en la página de la empresa y marcalo como aplicado.",
+      applied: "Avisos a los que aplicaste, con la fecha.",
+      dismissed: "Avisos descartados y el motivo. Podés restaurar cualquiera."
+    },
+    prio: [["AB","Prioridad A y B"],["A","Solo A"],["B","Solo B"],["C","Solo C"],["ABC","A, B y C"],["none","Sin clasificar"],["discard","Descartados por el clasificador"],["auto","Descartados automáticos"],["all","Todo"]],
+    allRoutes: "Todas las rutas", noRoute: "Sin ruta",
+    geo: [["","Toda ubicación"],["eligible","Elegible desde {country}"],["unclear","Dudoso"]],
+    geoBadge: {eligible: "Elegible desde {country}", unclear: "Ubicación dudosa"},
+    sort: [["prio","Ordenar por prioridad"],["posted","Más recientes"],["seen","Últimos traídos"]],
+    search: "Buscar puesto, empresa, texto…",
+    stats: (n, a, b, u) => `${n} avisos · ${a} A · ${b} B` + (u ? ` · ${u} esperan la próxima búsqueda` : ""),
+    market: {foreign: "Empleador del exterior", local: "Empleador local"},
+    contract: {contractor: "Contractor", employee: "Empleado"},
+    posted: "Publicado", isNew: "Nuevo", autoPrefix: "Descartado automáticamente: ", pending: "Todavía sin clasificar.",
+    details: "Detalle de la clasificación", duties: "Funciones centrales", geoEvidence: "Evidencia de ubicación", gaps: "Brechas",
+    blockers: "Bloqueantes", alerts: "Alertas", evidence: "Evidencia que respalda", location: "Ubicación en la fuente", type: "Tipo de empleo",
+    interested: "Me interesa", dismiss: "Descartar", back: "Volver a revisar", restore: "Restaurar", undo: "Deshacer",
+    cvEs: "CV en español", cvEn: "CV en inglés", cvOther: "Otro CV", applied: "Ya apliqué", appliedOn: "Aplicaste el",
+    view: "Ver aviso ↗", apply: "Postular ↗", addNote: "+ Nota", editNote: "Editar nota", notePh: "Nota personal",
+    whyDismiss: "¿Por qué?", reasons: {sales_support: "Ventas o atención", level: "Nivel no adecuado", not_remote: "No es remoto de verdad", topic: "No es mi área", other: "Otro"},
+    prompt: (lang, j) => `HireWire: armá el CV en ${lang === "es" ? "español" : "inglés"} para el aviso ${j.id} (${j.title} — ${j.company}).`,
+    copied: "Copiado. Pegalo en el chat de tu agente.",
+    empty: "No hay avisos acá con estos filtros.", saveError: "No se pudo guardar",
+    demo: 'Demo con datos de ejemplo ficticios. Los cambios quedan solo en este navegador. <a href="https://github.com/mickybuilds/hirewire-remote_job_scout" target="_blank" rel="noopener">Instalá HireWire</a> para usarlo con tu propio perfil.'
+  }
+};
+const MAIN_VIEWS = ["new", "interested", "cv"], ARCHIVE_VIEWS = ["applied", "dismissed"];
+const RANK = {A:0, B:1, C:2, none:3, discard:4, auto:5};
+let jobs = [], config = {routes: {}}, view = "new", lang = "en", demo = false, lastVisit = "", dismissing = null;
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const store = (k, v) => { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) {} return v; };
+const t = () => T[lang];
+const country = s => s.replace("{country}", config.residence_country || "");
+
+const prioOf = j => j.prefilter !== "pending" ? "auto" : j.classification ? j.classification.priority : "none";
+const viewOf = j => j.status === "interested" && j.cvs && j.cvs.length ? "cv" : j.status;
+
+function options(id, pairs) {
+  const el = $(id), v = el.value;
+  el.innerHTML = pairs.map(([k, n]) => `<option value="${esc(k)}">${esc(n)}</option>`).join("");
+  if (v && pairs.some(([k]) => k === v)) el.value = v;
+}
+function applyLanguage() {
+  document.documentElement.lang = lang;
+  document.querySelectorAll("[data-lang]").forEach(b => b.setAttribute("aria-pressed", b.dataset.lang === lang));
+  options("f-prio", t().prio);
+  options("f-route", [["", t().allRoutes], ...Object.entries(config.routes), ["none", t().noRoute]]);
+  options("f-geo", t().geo.map(([k, n]) => [k, country(n)]));
+  options("f-sort", t().sort);
+  $("f-text").placeholder = t().search;
+  $("demo").innerHTML = t().demo;
+}
+function passes(j) {
+  if (viewOf(j) !== view) return false;
+  const p = prioOf(j), c = j.classification || {};
+  if (view === "new") {
+    const f = $("f-prio").value;
+    if (f === "AB" && !["A","B"].includes(p)) return false;
+    if (f === "ABC" && !["A","B","C"].includes(p)) return false;
+    if (["A","B","C","none","discard","auto"].includes(f) && p !== f) return false;
+  }
+  if ($("f-route").value && c.route !== $("f-route").value) return false;
+  if ($("f-geo").value && c.geo !== $("f-geo").value) return false;
+  const q = $("f-text").value.trim().toLowerCase();
+  if (q && !(j.title + " " + j.company + " " + (c.reason || "") + " " + (c.duties || []).join(" ")).toLowerCase().includes(q)) return false;
+  return true;
+}
+function sorted(l) {
+  const o = $("f-sort").value;
+  return l.sort((x, y) => o === "posted" ? (y.posted || "").localeCompare(x.posted || "")
+    : o === "seen" ? (y.seen || "").localeCompare(x.seen || "")
+    : (RANK[prioOf(x)] - RANK[prioOf(y)]) || (y.posted || "").localeCompare(x.posted || ""));
+}
+const bullets = items => items && items.length ? "<ul>" + items.map(i => `<li>${esc(i)}</li>`).join("") + "</ul>" : "<span style='color:var(--muted)'>—</span>";
+const btn = (label, data, cls = "") => `<button class="btn ${cls}" ${Object.entries(data).map(([k, v]) => `data-${k}="${esc(v)}"`).join(" ")}>${label}</button>`;
+const link = (label, href, cls = "") => href ? `<a class="btn ${cls}" href="${esc(href)}" target="_blank" rel="noopener">${label}</a>` : "";
+
+function files(j) {
+  return (j.cvs || []).flatMap(cv => cv.files.map(f =>
+    `<a class="btn soft" href="${esc(f.url)}" download>↓ ${esc(f.name.split(".").pop().toUpperCase())} ${esc((cv.language || "").toUpperCase())}</a>`)).join("");
+}
+function actions(j) {
+  const L = t(), id = j.id, v = viewOf(j);
+  const dismiss = btn(L.dismiss, {dismiss: id}, "quiet");
+  const cvButtons = btn(L.cvEs, {cv: id, cvlang: "es"}, v === "interested" ? "primary" : "") + btn(L.cvEn, {cv: id, cvlang: "en"}, v === "interested" ? "primary" : "");
+  if (v === "new") return btn(L.interested, {status: "interested", id}, "primary") + link(L.view, j.url) + dismiss;
+  if (v === "interested") return cvButtons + link(L.view, j.url) + btn(L.back, {status: "new", id}, "quiet") + dismiss;
+  if (v === "cv") return files(j) + link(L.apply, j.apply_url || j.url) + btn(L.applied, {status: "applied", id}, "primary") + dismiss;
+  if (v === "applied") return `<span class="badge ok">${L.appliedOn} ${esc(j.applied_date)}</span>` + files(j) + link(L.view, j.url) + btn(L.undo, {status: "interested", id}, "quiet");
+  return (j.dismiss_reason ? `<span class="badge">${esc(L.reasons[j.dismiss_reason] || j.dismiss_reason)}</span>` : "") + link(L.view, j.url) + btn(L.restore, {status: "new", id}, "quiet");
+}
+
+function card(j) {
+  const c = j.classification, p = prioOf(j), L = t();
+  const label = p === "none" ? "?" : ["auto","discard"].includes(p) ? "✕" : p;
+  const badges = [];
+  if (view === "new" && lastVisit && j.seen > lastVisit) badges.push(`<span class="badge new">${L.isNew}</span>`);
+  if (c) {
+    if (L.geoBadge[c.geo]) badges.push(`<span class="badge ${c.geo === "eligible" ? "ok" : "warn"}">${esc(country(L.geoBadge[c.geo]))}</span>`);
+    badges.push(`<span class="badge">${esc(config.routes[c.route] || L.noRoute)}</span>`);
+    if (L.contract[c.contract]) badges.push(`<span class="badge">${L.contract[c.contract]}</span>`);
+    if (L.market[c.market]) badges.push(`<span class="badge">${L.market[c.market]}</span>`);
+    if (c.level !== "unknown") badges.push(`<span class="badge">${esc(c.level)}</span>`);
+  }
+  if (j.posted) badges.push(`<span class="badge">${L.posted} ${esc(j.posted)}</span>`);
+  if (j.salary) badges.push(`<span class="badge">${esc(j.salary)}</span>`);
+  badges.push(`<span class="badge">${esc(j.source)}</span>`);
+  const reason = c ? c.reason : j.prefilter !== "pending" ? L.autoPrefix + j.prefilter_reason : L.pending;
+  const detail = c ? `
+    <details class="det"><summary>${L.details}</summary>
+      <div class="grid">
+        <div><h4>${L.duties}</h4>${bullets(c.duties)}</div>
+        <div><h4>${L.geoEvidence}</h4><div class="quote">${esc(c.geo_evidence)}</div></div>
+        <div><h4>${L.gaps}</h4>${bullets(c.gaps)}</div>
+        <div><h4>${L.blockers}</h4>${bullets(c.blockers)}</div>
+        <div><h4>${L.alerts}</h4>${bullets(c.alerts)}</div>
+        <div><h4>${L.evidence}</h4>${c.evidence && c.evidence.length ? esc(c.evidence.join(", ")) : "—"}</div>
+        <div><h4>${L.location}</h4>${esc(j.location)}</div>
+        <div><h4>${L.type}</h4>${esc(j.employment_type) || "—"}</div>
+      </div>
+    </details>` : "";
+  const reasons = dismissing === j.id ? `<div class="reasons">${L.whyDismiss} ${Object.entries(L.reasons).map(([k, n]) => btn(n, {reason: k, id: j.id})).join("")}</div>` : "";
+  return `<article class="card ${["auto","discard"].includes(p) || ARCHIVE_VIEWS.includes(view) ? "dim" : ""}">
+    <div class="top">
+      <div class="prio p-${["auto","discard"].includes(p) ? "X" : p}">${label}</div>
+      <div class="head">
+        <a class="title" href="${esc(j.url)}" target="_blank" rel="noopener">${esc(j.title)}</a>
+        <div class="company">${esc(j.company)}</div>
+        <div class="badges">${badges.join("")}</div>
+      </div>
+    </div>
+    <p class="reason">${esc(reason)}</p>
+    ${detail}
+    <div class="actions">${actions(j)}<button class="more" data-note="${j.id}">${j.note ? L.editNote : L.addNote}</button></div>
+    ${reasons}
+    <div id="note-${j.id}" ${j.note ? "" : "hidden"}><textarea data-id="${j.id}" placeholder="${L.notePh}">${esc(j.note)}</textarea></div>
+  </article>`;
+}
+
+function render() {
+  const L = t(), count = {};
+  jobs.forEach(j => { const v = viewOf(j); count[v] = (count[v] || 0) + 1; });
+  const tab = (k, cls) => `<button class="tab ${cls}" aria-pressed="${k === view}" data-view="${k}">${L.views[k]}<span class="n">${count[k] || 0}</span></button>`;
+  $("tabs").innerHTML = MAIN_VIEWS.map(k => tab(k, "")).join("") + `<span class="sep"></span>` + ARCHIVE_VIEWS.map(k => tab(k, "archive")).join("");
+  $("f-prio").hidden = view !== "new";
+  const pr = x => jobs.filter(j => j.prefilter === "pending" && j.classification && j.classification.priority === x).length;
+  $("stats").textContent = L.stats(jobs.length, pr("A"), pr("B"), jobs.filter(j => j.prefilter === "pending" && !j.classification).length);
+  $("hint").textContent = L.hints[view];
+  const visible = sorted(jobs.filter(passes));
+  $("list").innerHTML = visible.length ? visible.map(card).join("") : `<p class="empty">${L.empty}</p>`;
+}
+
+function toast(msg) {
+  const el = $("toast"); el.textContent = msg; el.classList.add("show");
+  clearTimeout(toast.timer); toast.timer = setTimeout(() => el.classList.remove("show"), 3200);
+}
+async function copy(text) {
+  try { await navigator.clipboard.writeText(text); }
+  catch (e) {
+    const area = document.createElement("textarea"); area.value = text; document.body.appendChild(area);
+    area.select(); try { document.execCommand("copy"); } catch (e2) {} area.remove();
+  }
+}
+async function save(j, changes) {
+  if (demo) {
+    if (changes.status === "applied" && !j.applied_date) j.applied_date = new Date().toISOString().slice(0, 10);
+    const saved = JSON.parse(store("demo-statuses") || "{}");
+    saved[j.id] = {status: j.status, note: j.note, dismiss_reason: j.dismiss_reason, applied_date: j.applied_date};
+    store("demo-statuses", JSON.stringify(saved));
+    return;
+  }
+  const r = await fetch("/api/status", {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({id: j.id, ...changes})});
+  if (!r.ok) return alert(t().saveError);
+  const s = await r.json();
+  j.applied_date = s.applied_date || ""; j.dismiss_reason = s.dismiss_reason || "";
+}
+
+document.addEventListener("click", async e => {
+  const el = e.target.closest("button"); if (!el) return;
+  const d = el.dataset, j = jobs.find(x => x.id === (d.id || d.dismiss || d.cv || d.note));
+  if (d.view) { view = d.view; dismissing = null; store("view", view); render(); }
+  else if (d.lang) { lang = d.lang; store("lang", lang); applyLanguage(); render(); }
+  else if (d.status) { j.status = d.status; if (d.status !== "applied") j.applied_date = ""; if (d.status !== "dismissed") j.dismiss_reason = ""; await save(j, {status: j.status}); render(); }
+  else if (d.dismiss) { dismissing = dismissing === d.dismiss ? null : d.dismiss; render(); }
+  else if (d.reason) { j.status = "dismissed"; j.dismiss_reason = d.reason; dismissing = null; await save(j, {status: "dismissed", dismiss_reason: d.reason}); render(); }
+  else if (d.cv) { await copy(t().prompt(d.cvlang, j)); toast(t().copied); }
+  else if (d.note) { const box = $("note-" + d.note); box.hidden = false; box.querySelector("textarea").focus(); }
+});
+document.addEventListener("change", e => {
+  if (e.target.tagName === "TEXTAREA") {
+    const j = jobs.find(x => x.id === e.target.dataset.id); j.note = e.target.value; save(j, {note: j.note});
+  }
+});
+["f-prio","f-route","f-geo","f-sort"].forEach(id => $(id).addEventListener("change", () => { store(id, $(id).value); render(); }));
+$("f-text").addEventListener("input", render);
+
+async function load() {
+  try {
+    const r = await fetch("/api/jobs");
+    if (!r.ok) throw new Error(r.status);
+    return await r.json();
+  } catch (e) {
+    demo = true;
+    const data = await (await fetch("demo.json")).json();
+    const saved = JSON.parse(store("demo-statuses") || "{}");
+    data.jobs.forEach(j => Object.assign(j, saved[j.id] || {}));
+    return data;
+  }
+}
+
+(async () => {
+  const data = await load();
+  jobs = data.jobs; config = data.config;
+  lang = store("lang") || config.language || "en";
+  if (!T[lang]) lang = "en";
+  view = store("view") || "new";
+  if (![...MAIN_VIEWS, ...ARCHIVE_VIEWS].includes(view)) view = "new";
+  try { lastVisit = sessionStorage.getItem("baseline"); } catch (e) {}
+  if (lastVisit === null || lastVisit === undefined) {
+    lastVisit = store("last-visit") || "";
+    try { sessionStorage.setItem("baseline", lastVisit); } catch (e) {}
+    store("last-visit", new Date().toISOString());
+  }
+  $("demo").hidden = !demo;
+  applyLanguage();
+  ["f-prio","f-route","f-geo","f-sort"].forEach(id => { const v = store(id); if (v && [...$(id).options].some(o => o.value === v)) $(id).value = v; });
+  render();
+})();
+</script>
+</body>
+</html>

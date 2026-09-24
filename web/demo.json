@@ -1,0 +1,679 @@
+{
+ "config": {
+  "language": "en",
+  "residence_country": "Argentina",
+  "routes": {
+   "legal_ops": "Legal operations",
+   "contracts": "Contracts",
+   "ai_evals": "Legal AI evaluation",
+   "automation": "Legal automation",
+   "privacy": "Privacy (postponed)"
+  }
+ },
+ "jobs": [
+  {
+   "id": "4e211d78e3a9",
+   "title": "Legal Operations Specialist",
+   "company": "Fernhill Compliance Cloud",
+   "url": "https://example.com/jobs/fernhill-compliance-cloud/4e211d78e3a9",
+   "apply_url": "https://example.com/apply/4e211d78e3a9",
+   "location": "Latin America",
+   "employment_type": "Contractor",
+   "salary": "2,800–3,400 USD month",
+   "posted": "2026-09-21",
+   "source": "Himalayas",
+   "seen": "2026-09-21T12:00:00+00:00",
+   "prefilter": "pending",
+   "prefilter_reason": "",
+   "other_sources": [],
+   "classification": {
+    "geo": "eligible",
+    "geo_evidence": "This is a fully remote contractor role open to candidates across Latin America.",
+    "market": "foreign",
+    "contract": "contractor",
+    "route": "legal_ops",
+    "duties": [
+     "Run the legal intake queue and route requests",
+     "Maintain matter tracking and reporting",
+     "Document and improve legal workflows"
+    ],
+    "level": "mid",
+    "blockers": [],
+    "gaps": [
+     "Ironclad (CLM) not used before"
+    ],
+    "evidence": [
+     "E-INTAKE",
+     "E-TRACKER",
+     "E-PLAYBOOK"
+    ],
+    "alerts": [
+     "Overlap with US Eastern time, 4 hours"
+    ],
+    "priority": "A",
+    "reason": "Owns legal intake and workflow documentation for a US SaaS team; matches the intake tracker and playbook the candidate built."
+   },
+   "status": "interested",
+   "note": "Ask about the Ironclad onboarding.",
+   "cvs": [
+    {
+     "folder": "2026-09-22_fernhill_legal-operations-specialist",
+     "language": "en",
+     "created": "2026-09-22",
+     "files": [
+      {
+       "name": "CV_Sam_Rivera_Fernhill.docx",
+       "url": "demo-files/CV_Sam_Rivera_Fernhill.docx"
+      },
+      {
+       "name": "CV_Sam_Rivera_Fernhill.pdf",
+       "url": "demo-files/CV_Sam_Rivera_Fernhill.pdf"
+      }
+     ]
+    }
+   ],
+   "applied_date": "",
+   "dismiss_reason": ""
+  },
+  {
+   "id": "e3c53058d378",
+   "title": "Contract Analyst (Remote, LATAM)",
+   "company": "Quillstone Group",
+   "url": "https://example.com/jobs/quillstone-group/e3c53058d378",
+   "apply_url": "https://example.com/apply/e3c53058d378",
+   "location": "Buenos Aires, Argentina (Remote)",
+   "employment_type": "Contract",
+   "salary": "",
+   "posted": "2026-09-20",
+   "source": "LinkedIn",
+   "seen": "2026-09-20T12:00:00+00:00",
+   "prefilter": "pending",
+   "prefilter_reason": "",
+   "other_sources": [],
+   "classification": {
+    "geo": "eligible",
+    "geo_evidence": "Remote position for professionals based in LATAM, paid in USD.",
+    "market": "foreign",
+    "contract": "contractor",
+    "route": "contracts",
+    "duties": [
+     "Review NDAs and vendor agreements against a playbook",
+     "Track renewals and obligations",
+     "Flag risks to counsel"
+    ],
+    "level": "mid",
+    "blockers": [],
+    "gaps": [
+     "Commercial redlining at scale"
+    ],
+    "evidence": [
+     "E-CONTRACT-REVIEW",
+     "E-RENEWALS"
+    ],
+    "alerts": [
+     "6-month contract, renewable"
+    ],
+    "priority": "A",
+    "reason": "Playbook-based contract review and renewal tracking, close to the candidate's vendor-contract review experience."
+   },
+   "status": "new",
+   "note": "",
+   "cvs": [],
+   "applied_date": "",
+   "dismiss_reason": ""
+  },
+  {
+   "id": "434d77df8633",
+   "title": "AI Evaluation Specialist — Legal Domain",
+   "company": "Veritra Labs",
+   "url": "https://example.com/jobs/veritra-labs/434d77df8633",
+   "apply_url": "https://example.com/apply/434d77df8633",
+   "location": "No country restriction listed",
+   "employment_type": "Full Time",
+   "salary": "",
+   "posted": "2026-09-19",
+   "source": "Himalayas",
+   "seen": "2026-09-19T12:00:00+00:00",
+   "prefilter": "pending",
+   "prefilter_reason": "",
+   "other_sources": [],
+   "classification": {
+    "geo": "eligible",
+    "geo_evidence": "We hire worldwide; work from any country with a stable connection.",
+    "market": "foreign",
+    "contract": "employee",
+    "route": "ai_evals",
+    "duties": [
+     "Write and maintain legal evaluation guidelines",
+     "Audit reviewer decisions for consistency",
+     "Analyze model failure patterns"
+    ],
+    "level": "mid",
+    "blockers": [],
+    "gaps": [
+     "Python for analysis (nice to have)"
+    ],
+    "evidence": [
+     "E-QA-REVIEW",
+     "E-RUBRICS",
+     "E-FAILURE-VARIANTS"
+    ],
+    "alerts": [],
+    "priority": "A",
+    "reason": "Guideline and QA work on legal model evaluation, not pay-per-task annotation; backed by the candidate's quality-review role."
+   },
+   "status": "applied",
+   "note": "",
+   "cvs": [
+    {
+     "folder": "x",
+     "language": "en",
+     "created": "2026-09-20",
+     "files": [
+      {
+       "name": "CV_Sam_Rivera_Veritra.pdf",
+       "url": "demo-files/CV_Sam_Rivera_Fernhill.pdf"
+      }
+     ]
+    }
+   ],
+   "applied_date": "2026-09-20",
+   "dismiss_reason": ""
+  },
+  {
+   "id": "ca14c687f479",
+   "title": "Legal Workflow Automation Associate",
+   "company": "Harbor & Finch",
+   "url": "https://example.com/jobs/harbor-and-finch/ca14c687f479",
+   "apply_url": "https://example.com/apply/ca14c687f479",
+   "location": "Remote",
+   "employment_type": "Full-time",
+   "salary": "",
+   "posted": "2026-09-18",
+   "source": "LinkedIn",
+   "seen": "2026-09-18T12:00:00+00:00",
+   "prefilter": "pending",
+   "prefilter_reason": "",
+   "other_sources": [],
+   "classification": {
+    "geo": "unclear",
+    "geo_evidence": "Remote",
+    "market": "foreign",
+    "contract": "employee",
+    "route": "automation",
+    "duties": [
+     "Map legal processes into no-code workflows",
+     "Build intake automations with human review",
+     "Train lawyers on new tools"
+    ],
+    "level": "junior",
+    "blockers": [],
+    "gaps": [
+     "Production Zapier experience"
+    ],
+    "evidence": [
+     "E-N8N",
+     "E-PLAYBOOK"
+    ],
+    "alerts": [
+     "The listing does not say which countries are eligible"
+    ],
+    "priority": "B",
+    "reason": "Good fit for low-code legal automation, but the listing only says 'Remote'; confirm eligibility before applying."
+   },
+   "status": "new",
+   "note": "",
+   "cvs": [],
+   "applied_date": "",
+   "dismiss_reason": ""
+  },
+  {
+   "id": "e94aadb91ba1",
+   "title": "Analista Legal Sr.",
+   "company": "Estudio Moreno Paz",
+   "url": "https://example.com/jobs/estudio-moreno-paz/e94aadb91ba1",
+   "apply_url": "https://example.com/apply/e94aadb91ba1",
+   "location": "Argentina (Remoto)",
+   "employment_type": "Jornada completa",
+   "salary": "",
+   "posted": "2026-09-17",
+   "source": "LinkedIn",
+   "seen": "2026-09-17T12:00:00+00:00",
+   "prefilter": "pending",
+   "prefilter_reason": "",
+   "other_sources": [],
+   "classification": {
+    "geo": "eligible",
+    "geo_evidence": "Modalidad 100% remota para todo el país.",
+    "market": "local",
+    "contract": "employee",
+    "route": "legal_ops",
+    "duties": [
+     "Draft legal opinions",
+     "Answer court notices",
+     "Coordinate with public agencies"
+    ],
+    "level": "senior",
+    "blockers": [],
+    "gaps": [],
+    "evidence": [
+     "E-OPINIONS",
+     "E-COURT-NOTICES"
+    ],
+    "alerts": [
+     "Local salary in ARS"
+    ],
+    "priority": "B",
+    "reason": "Strong content fit and fully remote, but it is a local employer, which is lower priority in this profile."
+   },
+   "status": "new",
+   "note": "",
+   "cvs": [],
+   "applied_date": "",
+   "dismiss_reason": ""
+  },
+  {
+   "id": "21ec31920b72",
+   "title": "Case Manager — Immigration",
+   "company": "Northgate Advocacy",
+   "url": "https://example.com/jobs/northgate-advocacy/21ec31920b72",
+   "apply_url": "https://example.com/apply/21ec31920b72",
+   "location": "Americas",
+   "employment_type": "Contractor",
+   "salary": "",
+   "posted": "2026-09-16",
+   "source": "Himalayas",
+   "seen": "2026-09-16T12:00:00+00:00",
+   "prefilter": "pending",
+   "prefilter_reason": "",
+   "other_sources": [],
+   "classification": {
+    "geo": "eligible",
+    "geo_evidence": "Open to contractors located in the Americas.",
+    "market": "foreign",
+    "contract": "contractor",
+    "route": "legal_ops",
+    "duties": [
+     "Manage client case files end to end",
+     "Prepare document checklists",
+     "Follow up with clients by email"
+    ],
+    "level": "mid",
+    "blockers": [],
+    "gaps": [
+     "US immigration law specialty",
+     "Case management software"
+    ],
+    "evidence": [
+     "E-CASES"
+    ],
+    "alerts": [
+     "Heavy client contact"
+    ],
+    "priority": "B",
+    "reason": "Case management maps well to the candidate's case work, but the immigration specialty is a relevant gap."
+   },
+   "status": "dismissed",
+   "note": "",
+   "cvs": [],
+   "applied_date": "",
+   "dismiss_reason": "topic"
+  },
+  {
+   "id": "daeebc588d94",
+   "title": "Privacy Program Coordinator",
+   "company": "Oakline Data",
+   "url": "https://example.com/jobs/oakline-data/daeebc588d94",
+   "apply_url": "https://example.com/apply/daeebc588d94",
+   "location": "LATAM, Europe",
+   "employment_type": "Full Time",
+   "salary": "",
+   "posted": "2026-09-15",
+   "source": "Himalayas",
+   "seen": "2026-09-15T12:00:00+00:00",
+   "prefilter": "pending",
+   "prefilter_reason": "",
+   "other_sources": [],
+   "classification": {
+    "geo": "eligible",
+    "geo_evidence": "Candidates in LATAM or Europe are welcome.",
+    "market": "foreign",
+    "contract": "employee",
+    "route": "privacy",
+    "duties": [
+     "Keep the records of processing up to date",
+     "Coordinate data subject requests",
+     "Support privacy training"
+    ],
+    "level": "mid",
+    "blockers": [],
+    "gaps": [
+     "No hands-on GDPR program experience"
+    ],
+    "evidence": [
+     "E-PRIVACY-COURSE"
+    ],
+    "alerts": [],
+    "priority": "C",
+    "reason": "Postponed privacy route: evidence is coursework only, so it stays visible but low."
+   },
+   "status": "new",
+   "note": "",
+   "cvs": [],
+   "applied_date": "",
+   "dismiss_reason": ""
+  },
+  {
+   "id": "744c7804df1b",
+   "title": "Senior Counsel, Commercial",
+   "company": "Brightmoor Software",
+   "url": "https://example.com/jobs/brightmoor-software/744c7804df1b",
+   "apply_url": "https://example.com/apply/744c7804df1b",
+   "location": "Remote",
+   "employment_type": "Full-time",
+   "salary": "",
+   "posted": "2026-09-14",
+   "source": "LinkedIn",
+   "seen": "2026-09-14T12:00:00+00:00",
+   "prefilter": "pending",
+   "prefilter_reason": "",
+   "other_sources": [],
+   "classification": {
+    "geo": "eligible",
+    "geo_evidence": "Remote across the Americas.",
+    "market": "foreign",
+    "contract": "employee",
+    "route": "contracts",
+    "duties": [
+     "Negotiate enterprise SaaS agreements",
+     "Advise sales leadership",
+     "Own the contract playbook"
+    ],
+    "level": "senior",
+    "blockers": [
+     "Active New York bar admission required"
+    ],
+    "gaps": [
+     "Enterprise negotiation"
+    ],
+    "evidence": [],
+    "alerts": [],
+    "priority": "discard",
+    "reason": "Requires active New York bar admission to practice; that is a blocker."
+   },
+   "status": "new",
+   "note": "",
+   "cvs": [],
+   "applied_date": "",
+   "dismiss_reason": ""
+  },
+  {
+   "id": "ef32ad939c68",
+   "title": "Customer Success Manager — LegalTech",
+   "company": "Clerkly",
+   "url": "https://example.com/jobs/clerkly/ef32ad939c68",
+   "apply_url": "https://example.com/apply/ef32ad939c68",
+   "location": "Latin America",
+   "employment_type": "Full Time",
+   "salary": "",
+   "posted": "2026-09-13",
+   "source": "Himalayas",
+   "seen": "2026-09-13T12:00:00+00:00",
+   "prefilter": "pending",
+   "prefilter_reason": "",
+   "other_sources": [],
+   "classification": {
+    "geo": "eligible",
+    "geo_evidence": "Remote in Latin America.",
+    "market": "foreign",
+    "contract": "employee",
+    "route": "none",
+    "duties": [
+     "Manage a book of customer accounts",
+     "Drive renewals and upsells",
+     "Run onboarding calls"
+    ],
+    "level": "mid",
+    "blockers": [],
+    "gaps": [],
+    "evidence": [],
+    "alerts": [],
+    "priority": "discard",
+    "reason": "Despite the legal-tech company, the core of the job is account management and sales, outside every route."
+   },
+   "status": "new",
+   "note": "",
+   "cvs": [],
+   "applied_date": "",
+   "dismiss_reason": ""
+  },
+  {
+   "id": "16c8c700c943",
+   "title": "Legal Assistant (Hybrid)",
+   "company": "Palermo Legal Partners",
+   "url": "https://example.com/jobs/palermo-legal-partners/16c8c700c943",
+   "apply_url": "https://example.com/apply/16c8c700c943",
+   "location": "Buenos Aires, Argentina",
+   "employment_type": "Full-time",
+   "salary": "",
+   "posted": "2026-09-19",
+   "source": "LinkedIn",
+   "seen": "2026-09-19T12:00:00+00:00",
+   "prefilter": "auto_discarded",
+   "prefilter_reason": "Not eligible (location): «modalidad hibrida de dos dias en nuestra oficina de microcentro»",
+   "other_sources": [],
+   "classification": null,
+   "status": "new",
+   "note": "",
+   "cvs": [],
+   "applied_date": "",
+   "dismiss_reason": ""
+  },
+  {
+   "id": "922291528462",
+   "title": "Paralegal — US Residents Only",
+   "company": "Ridgeview Law Group",
+   "url": "https://example.com/jobs/ridgeview-law-group/922291528462",
+   "apply_url": "https://example.com/apply/922291528462",
+   "location": "United States",
+   "employment_type": "Full Time",
+   "salary": "",
+   "posted": "2026-09-18",
+   "source": "Himalayas",
+   "seen": "2026-09-18T12:00:00+00:00",
+   "prefilter": "auto_discarded",
+   "prefilter_reason": "Not eligible (location): «this position is open to us residents only and requires»",
+   "other_sources": [],
+   "classification": null,
+   "status": "new",
+   "note": "",
+   "cvs": [],
+   "applied_date": "",
+   "dismiss_reason": ""
+  },
+  {
+   "id": "bccf0bde1cdd",
+   "title": "Senior Backend Engineer",
+   "company": "Ledgerline",
+   "url": "https://example.com/jobs/ledgerline/bccf0bde1cdd",
+   "apply_url": "https://example.com/apply/bccf0bde1cdd",
+   "location": "Latin America",
+   "employment_type": "Full Time",
+   "salary": "",
+   "posted": "2026-09-18",
+   "source": "Himalayas",
+   "seen": "2026-09-18T12:00:00+00:00",
+   "prefilter": "auto_discarded",
+   "prefilter_reason": "Title from another field (backend)",
+   "other_sources": [],
+   "classification": null,
+   "status": "new",
+   "note": "",
+   "cvs": [],
+   "applied_date": "",
+   "dismiss_reason": ""
+  },
+  {
+   "id": "27d289ff07f5",
+   "title": "Compliance Analyst",
+   "company": "Tidewater Payments",
+   "url": "https://example.com/jobs/tidewater-payments/27d289ff07f5",
+   "apply_url": "https://example.com/apply/27d289ff07f5",
+   "location": "Latin America (Remote)",
+   "employment_type": "Contract",
+   "salary": "",
+   "posted": "2026-09-21",
+   "source": "LinkedIn",
+   "seen": "2026-09-21T12:00:00+00:00",
+   "prefilter": "pending",
+   "prefilter_reason": "",
+   "other_sources": [],
+   "classification": null,
+   "status": "new",
+   "note": "",
+   "cvs": [],
+   "applied_date": "",
+   "dismiss_reason": ""
+  },
+  {
+   "id": "63f6953be420",
+   "title": "Legal Operations Analyst",
+   "company": "Northbeam Health",
+   "url": "https://example.com/jobs/northbeam-health/63f6953be420",
+   "apply_url": "https://example.com/apply/63f6953be420",
+   "location": "Remote: ARG, BRA, CHL, COL, MEX",
+   "employment_type": "Contractor",
+   "salary": "3,000–3,600 USD month",
+   "posted": "2026-09-22",
+   "source": "Built In",
+   "seen": "2026-09-22T12:00:00+00:00",
+   "prefilter": "pending",
+   "prefilter_reason": "",
+   "other_sources": [],
+   "classification": {
+    "geo": "eligible",
+    "geo_evidence": "Remote position open to contractors in Argentina, Brazil, Chile, Colombia and Mexico.",
+    "market": "foreign",
+    "contract": "contractor",
+    "route": "legal_ops",
+    "duties": [
+     "Triage and route incoming legal requests",
+     "Keep the contract and matter tracker current",
+     "Document intake procedures for the legal team"
+    ],
+    "level": "mid",
+    "blockers": [],
+    "gaps": [
+     "Healthcare regulatory background"
+    ],
+    "evidence": [
+     "E-INTAKE",
+     "E-TRACKER",
+     "E-PLAYBOOK"
+    ],
+    "alerts": [
+     "Paid through Deel"
+    ],
+    "priority": "A",
+    "reason": "Legal intake and tracking for a US health company hiring LATAM contractors; the candidate's intake tracker and playbook match the core duties."
+   },
+   "status": "new",
+   "note": "",
+   "cvs": [],
+   "applied_date": "",
+   "dismiss_reason": ""
+  },
+  {
+   "id": "664af324ba37",
+   "title": "Contracts Specialist",
+   "company": "Ardent Clinical Research",
+   "url": "https://example.com/jobs/ardent-clinical-research/664af324ba37",
+   "apply_url": "https://example.com/apply/664af324ba37",
+   "location": "Latin America Only",
+   "employment_type": "Full-Time",
+   "salary": "",
+   "posted": "2026-09-21",
+   "source": "We Work Remotely",
+   "seen": "2026-09-21T12:00:00+00:00",
+   "prefilter": "pending",
+   "prefilter_reason": "",
+   "other_sources": [],
+   "classification": {
+    "geo": "eligible",
+    "geo_evidence": "This role is open to candidates based anywhere in Latin America.",
+    "market": "foreign",
+    "contract": "employee",
+    "route": "contracts",
+    "duties": [
+     "Draft and negotiate site agreements from templates",
+     "Track budgets and renewal dates",
+     "Coordinate signatures with sites and sponsors"
+    ],
+    "level": "mid",
+    "blockers": [],
+    "gaps": [
+     "Clinical trial agreements"
+    ],
+    "evidence": [
+     "E-CONTRACT-REVIEW",
+     "E-RENEWALS"
+    ],
+    "alerts": [
+     "Some overlap with US Eastern time"
+    ],
+    "priority": "A",
+    "reason": "Template-based contract work with renewal tracking; clinical trials are new, but the contract review experience transfers directly."
+   },
+   "status": "new",
+   "note": "",
+   "cvs": [],
+   "applied_date": "",
+   "dismiss_reason": ""
+  },
+  {
+   "id": "929ddd93db5c",
+   "title": "Legal Research Analyst (Remote)",
+   "company": "Clearwater Policy Lab",
+   "url": "https://example.com/jobs/clearwater-policy-lab/929ddd93db5c",
+   "apply_url": "https://example.com/apply/929ddd93db5c",
+   "location": "Worldwide",
+   "employment_type": "Full-time",
+   "salary": "",
+   "posted": "2026-09-20",
+   "source": "Remotive",
+   "seen": "2026-09-20T12:00:00+00:00",
+   "prefilter": "pending",
+   "prefilter_reason": "",
+   "other_sources": [],
+   "classification": {
+    "geo": "unclear",
+    "geo_evidence": "Remote",
+    "market": "foreign",
+    "contract": "unknown",
+    "route": "ai_evals",
+    "duties": [
+     "Research primary sources across jurisdictions",
+     "Write structured legal summaries",
+     "Review colleagues' research for accuracy"
+    ],
+    "level": "mid",
+    "blockers": [],
+    "gaps": [],
+    "evidence": [
+     "E-RESEARCH",
+     "E-QA-REVIEW"
+    ],
+    "alerts": [
+     "Probably open: team spread across 14 countries"
+    ],
+    "priority": "B",
+    "reason": "Research and review work that fits well; the listing only says 'Remote', but the team is spread across many countries."
+   },
+   "status": "new",
+   "note": "",
+   "cvs": [],
+   "applied_date": "",
+   "dismiss_reason": ""
+  }
+ ]
+}

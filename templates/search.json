@@ -1,0 +1,154 @@
+{
+  "language": "en",
+  "candidate": {
+    "residence_country": "Argentina",
+    "country_code": "AR",
+    "city": "",
+    "utc_offset": -3,
+    "work_authorization": [
+      "Argentina"
+    ],
+    "eligible_regions": [
+      "Argentina",
+      "LATAM",
+      "Latin America",
+      "South America",
+      "Americas"
+    ],
+    "work_mode": "remote_only",
+    "contract_preference": "contractor",
+    "local_employers": "lower_priority"
+  },
+  "routes": {
+    "route_id": "Short route label"
+  },
+  "max_age_days": 21,
+  "max_classify_per_run": 60,
+  "sources": {
+    "himalayas": {
+      "enabled": true,
+      "max_pages": 5,
+      "queries": [
+        "example query"
+      ]
+    },
+    "builtin": {
+      "enabled": true,
+      "country": "ARG",
+      "max_new_per_run": 80,
+      "queries": [
+        "example query"
+      ]
+    },
+    "weworkremotely": {
+      "enabled": true,
+      "feeds": [
+        "https://weworkremotely.com/remote-jobs.rss"
+      ]
+    },
+    "remotive": {
+      "enabled": true
+    },
+    "jobicy": {
+      "enabled": true,
+      "geo": "latam",
+      "queries": [
+        "example query"
+      ]
+    },
+    "getonboard": {
+      "enabled": false,
+      "queries": [
+        "example query"
+      ]
+    },
+    "apify_linkedin": {
+      "enabled": true,
+      "requires_apify": true,
+      "actor": "curious_coder~linkedin-jobs-scraper",
+      "max_spend_usd": 0.95,
+      "location": "Argentina",
+      "geo_id": "100446943",
+      "period": "r604800",
+      "max_per_query": 28,
+      "queries": [
+        "example query"
+      ]
+    },
+    "apify_indeed": {
+      "enabled": true,
+      "requires_apify": true,
+      "actor": "curious_coder~indeed-scraper",
+      "max_spend_usd": 0.1,
+      "country": "",
+      "location": "",
+      "posted_within_days": "14",
+      "max_per_query": 30,
+      "queries": [
+        "example query"
+      ]
+    }
+  },
+  "prefilter": {
+    "excluded_companies": [],
+    "mode_exclusions": [
+      "(?<!remoto o )(?<!remota o )(?<!remoto y )(?<!remoto/)\\bhibrid[oa]\\b(?! (o|y) (100% )?remot[oa])(?!/remot[oa])",
+      "(?<!remote or )(?<!remote and )(?<!remote/)(?<!remote, )\\bhybrid\\b(?! (and|or) (fully )?remote)(?!/remote)(?!, remote)",
+      "100 ?% presencial",
+      "modalidad presencial",
+      "trabajo presencial",
+      "\\bon-?site\\b",
+      "in[- ]office",
+      "days? (a week )?in (the )?office"
+    ],
+    "remote_only_sources": [
+      "Himalayas",
+      "Built In",
+      "We Work Remotely",
+      "Remotive",
+      "Jobicy",
+      "Get on Board"
+    ],
+    "geo_exclusions": [
+      "authori[sz]ed to work in the (us|u\\.s\\.|united states|uk|united kingdom|eu|european union|canada)",
+      "must (be )?(currently )?(based|located|reside|residing|live|living) in (the )?(us|u\\.s\\.|usa|united states|uk|united kingdom|europe|eu|canada|australia|africa|asia)\\b",
+      "(us|u\\.s\\.|united states|uk|eu|canada)[- ]based (candidates|applicants|only)",
+      "(us|u\\.s\\.|united states) residents only",
+      "remote\\s*[-(,/]\\s*(us|usa|u\\.s\\.|united states|canada|uk|europe|emea|eu|apac)\\b",
+      "\\((europe|emea|us|usa|uk|canada) ?- ?remote\\)",
+      "\\bw-?2 only",
+      "unable to sponsor|will not sponsor|require (visa )?sponsorship"
+    ],
+    "remote_required_sources": [
+      "LinkedIn",
+      "Indeed"
+    ],
+    "remote_signals": [
+      "remot",
+      "home[- ]?office",
+      "home[- ]?based",
+      "work(ing)? from home",
+      "\\bwfh\\b",
+      "teletrabajo",
+      "trabajo a distancia",
+      "desde (tu|su) (casa|hogar)",
+      "sin salir de (tu|su) (casa|hogar|lugar)",
+      "100 ?% virtual",
+      "fully virtual",
+      "virtual (position|role|team|assistant)",
+      "anywhere",
+      "distributed team",
+      "fully distributed"
+    ],
+    "route_title_terms": [
+      "example term"
+    ],
+    "description_signals": [
+      "example signal"
+    ],
+    "min_description_signals": 2,
+    "foreign_title_terms": [
+      "example unrelated title"
+    ]
+  }
+}

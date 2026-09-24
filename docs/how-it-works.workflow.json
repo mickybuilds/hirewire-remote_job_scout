@@ -1,0 +1,65 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "How HireWire works",
+    "locale": "en",
+    "quality_profile": "showcase",
+    "output": "docs/how-it-works.html"
+  },
+  "lanes": [
+    { "id": "you", "label": "You" },
+    { "id": "agent", "label": "Your AI agent" },
+    { "id": "pipeline", "label": "Search pipeline" }
+  ],
+  "phases": [
+    { "id": "setup", "label": "Set up once", "fromCol": 0, "toCol": 1 },
+    { "id": "search", "label": "Configure + search", "fromCol": 2, "toCol": 3, "variant": "emphasis" },
+    { "id": "apply", "label": "Pick and apply", "fromCol": 4, "toCol": 5, "variant": "dashed" }
+  ],
+  "mainPath": ["install", "profile", "routes", "sources", "prefilter", "classify", "dashboard", "cv", "apply"],
+  "nodes": [
+    { "id": "install", "lane": "you", "col": 0, "type": "external", "label": "Install", "sublabel": "paste one sentence", "width": 140 },
+    { "id": "dashboard", "lane": "you", "col": 4, "type": "frontend", "label": "Local dashboard", "sublabel": "review, mark, download", "width": 150 },
+    { "id": "apply", "lane": "you", "col": 5, "type": "external", "label": "You apply", "sublabel": "never automatic", "width": 140 },
+    { "id": "profile", "lane": "agent", "col": 1, "type": "backend", "label": "/profile", "sublabel": "CV + short interview", "width": 150 },
+    { "id": "routes", "lane": "agent", "col": 2, "type": "security", "label": "/routes", "sublabel": "where you can work", "tag": "country · permit · remote", "width": 150 },
+    { "id": "classify", "lane": "agent", "col": 3, "type": "backend", "label": "AI classifier", "sublabel": "remote + country quotes", "tag": "A / B / C", "width": 150 },
+    { "id": "cv", "lane": "agent", "col": 5, "type": "backend", "label": "/cv", "sublabel": "Harvard, ES or EN", "width": 140 },
+    { "id": "evidence", "lane": "pipeline", "col": 1, "type": "database", "label": "EVIDENCE.md", "sublabel": "facts with limits", "width": 150 },
+    { "id": "sources", "lane": "pipeline", "col": 2, "type": "cloud", "label": "7 job sources", "sublabel": "5 free + Apify", "width": 150 },
+    { "id": "prefilter", "lane": "pipeline", "col": 3, "type": "security", "label": "Free prefilter", "sublabel": "dedupe · fake remote", "tag": "top 60 by relevance", "width": 150 }
+  ],
+  "edges": [
+    { "id": "start", "from": "install", "to": "profile", "label": "/hirewire", "variant": "emphasis" },
+    { "id": "profile-routes", "from": "profile", "to": "routes", "variant": "default" },
+    { "id": "profile-evidence", "from": "profile", "to": "evidence", "label": "writes", "variant": "dashed", "role": "branch" },
+    { "id": "routes-sources", "from": "routes", "to": "sources", "label": "search.json", "variant": "default" },
+    { "id": "sources-prefilter", "from": "sources", "to": "prefilter", "variant": "default" },
+    { "id": "prefilter-classify", "from": "prefilter", "to": "classify", "variant": "emphasis" },
+    { "id": "classify-dashboard", "from": "classify", "to": "dashboard", "label": "ranked", "variant": "emphasis" },
+    { "id": "dashboard-cv", "from": "dashboard", "to": "cv", "label": "Interested", "variant": "default" },
+    { "id": "cv-apply", "from": "cv", "to": "apply", "label": "CV ready", "variant": "emphasis" },
+    { "id": "evidence-cv", "from": "evidence", "to": "cv", "label": "only these facts", "variant": "dashed", "role": "branch", "fromSide": "bottom", "toSide": "bottom", "route": "bottom-channel" }
+  ],
+  "cards": [
+    {
+      "dot": "emerald",
+      "title": "What it costs",
+      "items": [
+        "5 free job boards, no account needed",
+        "LinkedIn + Indeed through Apify's free monthly credit, with a spending cap",
+        "The AI reads only filtered, ranked listings"
+      ]
+    },
+    {
+      "dot": "cyan",
+      "title": "What it guarantees",
+      "items": [
+        "Eligible = a remote quote + a country quote",
+        "Every CV line traces back to EVIDENCE.md",
+        "Your data stays on your computer"
+      ]
+    }
+  ]
+}
